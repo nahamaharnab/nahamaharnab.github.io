@@ -35,8 +35,7 @@ export function SiteHeader({ active }: SiteHeaderProps) {
 export function SiteFooter() {
   return (
     <footer>
-      <p>Maharnab Naha</p>
-      <p>Personal research website · 2026</p>
+      <p className="footer-updated">last updated · August 2026</p>
     </footer>
   );
 }
