@@ -62,12 +62,15 @@ a {
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 26px;
-  transition: color 160ms ease;
+  opacity: 0.35;
+  transition: color 160ms ease, opacity 160ms ease;
 }
 
+.site-nav a.active,
 .site-nav a:hover,
 .site-nav a:focus-visible {
   color: var(--red);
+  opacity: 1;
 }
 
 .hero {
@@ -222,6 +225,10 @@ h1 {
   padding: 132px max(5vw, 40px);
 }
 
+.page-section {
+  min-height: calc(100vh - 145px);
+}
+
 .research-section {
   background: var(--white);
 }
@@ -230,6 +237,7 @@ h1 {
   max-width: 710px;
 }
 
+.section-heading h1,
 .section-heading h2 {
   font-size: clamp(42px, 5vw, 74px);
   font-weight: 800;
@@ -274,7 +282,7 @@ h1 {
   transform: translateY(-6px);
 }
 
-.research-card h3 {
+.research-card h2 {
   font-size: 33px;
   line-height: 0.96;
   margin: 78px 0 17px;
@@ -321,7 +329,7 @@ h1 {
   color: var(--gold);
 }
 
-.resource-row h3 {
+.resource-row h2 {
   font-size: 30px;
   line-height: 1;
   margin-bottom: 8px;
@@ -395,7 +403,7 @@ footer p:first-child {
     min-height: 255px;
   }
 
-  .research-card h3 {
+  .research-card h2 {
     margin-top: 44px;
   }
 }
