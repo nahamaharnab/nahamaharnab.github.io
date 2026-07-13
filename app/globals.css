@@ -127,6 +127,18 @@ h1 {
   max-width: 580px;
 }
 
+.intro p {
+  margin-bottom: 21px;
+}
+
+.intro p:last-child {
+  margin-bottom: 0;
+}
+
+.intro strong {
+  font-weight: 800;
+}
+
 .hero-actions {
   align-items: center;
   display: flex;
