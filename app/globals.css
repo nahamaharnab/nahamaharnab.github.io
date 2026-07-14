@@ -10,6 +10,8 @@
   --olive: #988a20;
   --white: #fffdf8;
   --line: rgba(30, 64, 79, 0.22);
+  --cloth-indigo: #6573a9;
+  --cloth-mist: #aeb8de;
 }
 
 * {
@@ -82,8 +84,73 @@ a {
 
 .hero-copy {
   align-self: center;
+  isolation: isolate;
   max-width: 760px;
+  overflow: hidden;
   padding: 104px 10vw 116px max(5vw, 40px);
+  position: relative;
+}
+
+.hero-copy > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-copy::before,
+.research-section::before,
+.resources-section::before {
+  background:
+    radial-gradient(
+      120% 92% at -16% 112%,
+      transparent 0 41%,
+      rgba(101, 115, 169, 0.11) 41.4% 43.1%,
+      transparent 43.5%
+    ),
+    radial-gradient(
+      96% 76% at 118% 5%,
+      transparent 0 43%,
+      rgba(101, 115, 169, 0.1) 43.4% 44.8%,
+      transparent 45.2%
+    ),
+    linear-gradient(
+      132deg,
+      transparent 0 29%,
+      rgba(101, 115, 169, 0.055) 29.4% 30.1%,
+      transparent 30.5% 100%
+    );
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.hero-copy::after,
+.research-section::after,
+.resources-section::after {
+  clip-path: polygon(
+    50% 0,
+    61% 39%,
+    100% 50%,
+    61% 61%,
+    50% 100%,
+    39% 61%,
+    0 50%,
+    39% 39%
+  );
+  content: "";
+  height: 82px;
+  pointer-events: none;
+  position: absolute;
+  right: 13%;
+  top: 16%;
+  width: 82px;
+  z-index: 0;
+}
+
+.hero-copy::after {
+  background: var(--olive);
+  opacity: 0.16;
 }
 
 .eyebrow,
@@ -201,7 +268,16 @@ h1 {
 
 .research-section,
 .resources-section {
+  isolation: isolate;
+  overflow: hidden;
   padding: 132px max(5vw, 40px);
+  position: relative;
+}
+
+.research-section > *,
+.resources-section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .page-section {
@@ -210,6 +286,36 @@ h1 {
 
 .research-section {
   background: var(--white);
+}
+
+.research-section::before {
+  background:
+    radial-gradient(
+      118% 88% at -12% 108%,
+      transparent 0 42%,
+      rgba(52, 104, 92, 0.1) 42.4% 44%,
+      transparent 44.4%
+    ),
+    radial-gradient(
+      105% 84% at 116% 8%,
+      transparent 0 38%,
+      rgba(101, 115, 169, 0.08) 38.4% 39.8%,
+      transparent 40.2%
+    ),
+    linear-gradient(
+      133deg,
+      transparent 0 31%,
+      rgba(52, 104, 92, 0.045) 31.4% 32%,
+      transparent 32.4% 100%
+    );
+}
+
+.research-section::after {
+  background: var(--orange);
+  bottom: 13%;
+  opacity: 0.1;
+  right: 8%;
+  top: auto;
 }
 
 .section-heading {
@@ -283,6 +389,36 @@ h1 {
 .resources-section {
   background: var(--red);
   color: var(--white);
+}
+
+.resources-section::before {
+  background:
+    radial-gradient(
+      108% 92% at -12% 105%,
+      transparent 0 42%,
+      rgba(255, 253, 248, 0.12) 42.4% 43.9%,
+      transparent 44.3%
+    ),
+    radial-gradient(
+      100% 86% at 116% 7%,
+      transparent 0 39%,
+      rgba(237, 149, 48, 0.14) 39.4% 40.8%,
+      transparent 41.2%
+    ),
+    linear-gradient(
+      132deg,
+      transparent 0 28%,
+      rgba(255, 253, 248, 0.06) 28.4% 29.1%,
+      transparent 29.5% 100%
+    );
+}
+
+.resources-section::after {
+  background: var(--gold);
+  bottom: 12%;
+  opacity: 0.2;
+  right: 9%;
+  top: auto;
 }
 
 .resources-heading .eyebrow {
