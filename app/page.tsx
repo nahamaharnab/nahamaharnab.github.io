@@ -35,7 +35,7 @@ export default function AboutPage() {
         </div>
         <div className="hero-art hero-portrait">
           <img
-            src="/maharnab-portrait.png"
+            src="/maharnab-portrait-transparent-v2.png"
             alt="Painted caricature of Maharnab Naha wearing round glasses and a blue jacket."
           />
         </div>
