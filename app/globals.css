@@ -29,6 +29,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -258,7 +264,7 @@ h1 {
 
 .hero-art {
   align-items: center;
-  background: var(--ink);
+  background: transparent;
   display: flex;
   justify-content: center;
   min-height: 100%;
@@ -490,6 +496,10 @@ footer {
   gap: 14px;
   justify-content: flex-end;
   padding: 31px max(5vw, 40px);
+}
+
+main > footer {
+  margin-top: auto;
 }
 
 footer p {

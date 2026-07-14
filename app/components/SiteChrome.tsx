@@ -38,7 +38,7 @@ export function SiteFooter() {
       <p className="footer-updated">last updated · August 2026</p>
       <img
         className="footer-tiger"
-        src="/tiger-footer.jpg"
+        src="/tiger-footer-transparent.png"
         alt=""
       />
     </footer>
