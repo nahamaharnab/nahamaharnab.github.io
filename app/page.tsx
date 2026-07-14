@@ -7,7 +7,7 @@ export default function AboutPage() {
 
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">personal research website</p>
+          <p className="eyebrow">personal academic website</p>
           <div className="intro">
             <p>
               i am a <strong>phd student</strong> in economics at{" "}
@@ -21,16 +21,9 @@ export default function AboutPage() {
               falls primarily under the umbrella of labor, development, and public
               economics.
             </p>
-            <p>
-              i firmly believe my research should be scientific and inform society
-              towards its growth, and would like my work to meaningfully motivate in
-              this direction.
-            </p>
           </div>
           <div className="hero-actions">
-            <a className="primary-link" href="/research">
-              Explore research <span aria-hidden="true">↓</span>
-            </a>
+            <a className="primary-link" href="/research">Explore research</a>
           </div>
         </div>
         <div className="hero-art hero-portrait">

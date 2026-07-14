@@ -36,6 +36,11 @@ export function SiteFooter() {
   return (
     <footer>
       <p className="footer-updated">last updated · August 2026</p>
+      <img
+        className="footer-tiger"
+        src="/tiger-footer.jpg"
+        alt=""
+      />
     </footer>
   );
 }

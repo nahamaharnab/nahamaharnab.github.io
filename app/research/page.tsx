@@ -34,6 +34,11 @@ export default function ResearchPage() {
             Start with the work you most want people to read. This structure can
             grow naturally as papers, projects, and publications accumulate.
           </p>
+          <p>
+            i firmly believe my research should be scientific and inform society
+            towards its growth, and would like my work to meaningfully motivate in
+            this direction.
+          </p>
         </div>
 
         <div className="research-grid">
