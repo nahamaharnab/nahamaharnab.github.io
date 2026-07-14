@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 :root {
   --ink: #1e404f;
   --green: #34685c;
@@ -11,8 +9,6 @@
   --olive: #988a20;
   --white: #fffdf8;
   --line: rgba(30, 64, 79, 0.22);
-  --cloth-indigo: #6573a9;
-  --cloth-mist: #aeb8de;
   --page-gutter: clamp(40px, 8vw, 150px);
   --hero-copy-left: clamp(100px, 12vw, 220px);
 }
@@ -37,12 +33,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  min-height: 100svh;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -52,6 +42,24 @@ a:focus-visible {
   border-radius: 2px;
   outline: 3px solid var(--gold);
   outline-offset: 4px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+section {
+  scroll-margin-top: 120px;
 }
 
 .skip-link {
@@ -71,14 +79,14 @@ a:focus-visible {
 }
 
 .sr-only {
+  clip: rect(0, 0, 0, 0);
   height: 1px;
   margin: -1px;
   overflow: hidden;
   padding: 0;
   position: absolute;
-  width: 1px;
-  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
+  width: 1px;
 }
 
 .site-header {
@@ -117,7 +125,6 @@ a:focus-visible {
   transition: color 160ms ease, opacity 160ms ease;
 }
 
-.site-nav a.active,
 .site-nav a:hover,
 .site-nav a:focus-visible {
   color: var(--red-deep);
@@ -167,24 +174,9 @@ a:focus-visible {
 .research-section::before,
 .resources-section::before {
   background:
-    radial-gradient(
-      120% 92% at -16% 112%,
-      transparent 0 41%,
-      rgba(101, 115, 169, 0.11) 41.4% 43.1%,
-      transparent 43.5%
-    ),
-    radial-gradient(
-      96% 76% at 118% 5%,
-      transparent 0 43%,
-      rgba(101, 115, 169, 0.1) 43.4% 44.8%,
-      transparent 45.2%
-    ),
-    linear-gradient(
-      132deg,
-      transparent 0 29%,
-      rgba(101, 115, 169, 0.055) 29.4% 30.1%,
-      transparent 30.5% 100%
-    );
+    radial-gradient(120% 92% at -16% 112%, transparent 0 41%, rgba(101, 115, 169, 0.11) 41.4% 43.1%, transparent 43.5%),
+    radial-gradient(96% 76% at 118% 5%, transparent 0 43%, rgba(101, 115, 169, 0.1) 43.4% 44.8%, transparent 45.2%),
+    linear-gradient(132deg, transparent 0 29%, rgba(101, 115, 169, 0.055) 29.4% 30.1%, transparent 30.5% 100%);
   content: "";
   inset: 0;
   pointer-events: none;
@@ -195,16 +187,7 @@ a:focus-visible {
 .hero-copy::after,
 .research-section::after,
 .resources-section::after {
-  clip-path: polygon(
-    50% 0,
-    61% 39%,
-    100% 50%,
-    61% 61%,
-    50% 100%,
-    39% 61%,
-    0 50%,
-    39% 39%
-  );
+  clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
   content: "";
   height: 82px;
   pointer-events: none;
@@ -236,28 +219,6 @@ a:focus-visible {
   margin-bottom: 22px;
 }
 
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
-}
-
-h1,
-h2,
-h3 {
-  letter-spacing: -0.055em;
-  text-wrap: balance;
-}
-
-h1 {
-  font-size: clamp(58px, 7vw, 112px);
-  font-weight: 800;
-  line-height: 0.88;
-  margin-bottom: 31px;
-  max-width: 650px;
-}
-
 .intro {
   font-size: 20px;
   line-height: 1.52;
@@ -272,17 +233,6 @@ h1 {
 
 .intro p:last-child {
   margin-bottom: 0;
-}
-
-.intro strong {
-  font-weight: 800;
-}
-
-.hero-actions {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 26px;
 }
 
 .primary-link {
@@ -304,16 +254,8 @@ h1 {
   transform: translateY(-2px);
 }
 
-.text-link {
-  border-bottom: 1px solid currentColor;
-  font-size: 16px;
-  font-weight: 700;
-  padding-bottom: 3px;
-}
-
 .hero-art {
   align-items: center;
-  background: transparent;
   display: flex;
   justify-content: center;
   min-height: 100%;
@@ -332,25 +274,6 @@ h1 {
   max-width: 100%;
   object-fit: contain;
   width: min(100%, 570px);
-}
-
-@media (min-width: 901px) {
-  .hero-copy {
-    padding-left: var(--hero-copy-left);
-    padding-right: var(--page-gutter);
-  }
-
-  .hero-portrait {
-    justify-content: flex-end;
-    overflow: visible;
-    padding: 28px max(0px, calc(var(--hero-copy-left) - 104px)) 28px 0;
-  }
-
-  .hero-portrait img {
-    flex-shrink: 0;
-    max-width: none;
-    width: 570px;
-  }
 }
 
 .research-section,
@@ -377,24 +300,9 @@ h1 {
 
 .research-section::before {
   background:
-    radial-gradient(
-      118% 88% at -12% 108%,
-      transparent 0 42%,
-      rgba(52, 104, 92, 0.1) 42.4% 44%,
-      transparent 44.4%
-    ),
-    radial-gradient(
-      105% 84% at 116% 8%,
-      transparent 0 38%,
-      rgba(101, 115, 169, 0.08) 38.4% 39.8%,
-      transparent 40.2%
-    ),
-    linear-gradient(
-      133deg,
-      transparent 0 31%,
-      rgba(52, 104, 92, 0.045) 31.4% 32%,
-      transparent 32.4% 100%
-    );
+    radial-gradient(118% 88% at -12% 108%, transparent 0 42%, rgba(52, 104, 92, 0.1) 42.4% 44%, transparent 44.4%),
+    radial-gradient(105% 84% at 116% 8%, transparent 0 38%, rgba(101, 115, 169, 0.08) 38.4% 39.8%, transparent 40.2%),
+    linear-gradient(133deg, transparent 0 31%, rgba(52, 104, 92, 0.045) 31.4% 32%, transparent 32.4% 100%);
 }
 
 .research-section::after {
@@ -409,7 +317,6 @@ h1 {
   max-width: 710px;
 }
 
-.section-heading h1,
 .section-heading h2 {
   font-size: clamp(42px, 5vw, 74px);
   font-weight: 800;
@@ -420,15 +327,8 @@ h1 {
 .section-heading > p:not(.eyebrow) {
   font-size: 19px;
   line-height: 1.5;
-  max-width: 610px;
-}
-
-.section-heading > p:not(.eyebrow) + p:not(.eyebrow) {
-  margin-top: 18px;
-}
-
-.section-heading > p:not(.eyebrow):last-child {
   margin-bottom: 0;
+  max-width: 610px;
 }
 
 .research-grid {
@@ -442,17 +342,11 @@ h1 {
   background: var(--paper);
   min-height: 355px;
   padding: 32px;
-  position: relative;
   transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
 .research-card:nth-child(2) {
   background: var(--orange);
-}
-
-.research-card:nth-child(3) {
-  background: var(--green);
-  color: var(--white);
 }
 
 .research-card:hover {
@@ -461,7 +355,7 @@ h1 {
   transform: translateY(-6px);
 }
 
-.research-card h2 {
+.research-card h3 {
   font-size: 33px;
   line-height: 0.96;
   margin: 78px 0 17px;
@@ -470,15 +364,9 @@ h1 {
 .research-card > p:not(.card-number) {
   font-size: 16px;
   line-height: 1.48;
+  margin-bottom: 0;
   max-width: 300px;
   text-wrap: pretty;
-}
-
-.card-arrow {
-  bottom: 25px;
-  font-size: 30px;
-  position: absolute;
-  right: 30px;
 }
 
 .resources-section {
@@ -488,24 +376,9 @@ h1 {
 
 .resources-section::before {
   background:
-    radial-gradient(
-      108% 92% at -12% 105%,
-      transparent 0 42%,
-      rgba(255, 253, 248, 0.12) 42.4% 43.9%,
-      transparent 44.3%
-    ),
-    radial-gradient(
-      100% 86% at 116% 7%,
-      transparent 0 39%,
-      rgba(237, 149, 48, 0.14) 39.4% 40.8%,
-      transparent 41.2%
-    ),
-    linear-gradient(
-      132deg,
-      transparent 0 28%,
-      rgba(255, 253, 248, 0.06) 28.4% 29.1%,
-      transparent 29.5% 100%
-    );
+    radial-gradient(108% 92% at -12% 105%, transparent 0 42%, rgba(255, 253, 248, 0.12) 42.4% 43.9%, transparent 44.3%),
+    radial-gradient(100% 86% at 116% 7%, transparent 0 39%, rgba(237, 149, 48, 0.14) 39.4% 40.8%, transparent 41.2%),
+    linear-gradient(132deg, transparent 0 28%, rgba(255, 253, 248, 0.06) 28.4% 29.1%, transparent 29.5% 100%);
 }
 
 .resources-section::after {
@@ -539,7 +412,7 @@ h1 {
   color: var(--white);
 }
 
-.resource-row h2 {
+.resource-row h3 {
   font-size: 30px;
   line-height: 1;
   margin-bottom: 8px;
@@ -568,10 +441,6 @@ footer {
   padding: 31px var(--page-gutter);
 }
 
-main > footer {
-  margin-top: auto;
-}
-
 footer p {
   font-size: 14px;
   margin-bottom: 0;
@@ -585,6 +454,25 @@ footer p {
   object-fit: cover;
   object-position: 50% 70%;
   width: 48px;
+}
+
+@media (min-width: 901px) {
+  .hero-copy {
+    padding-left: var(--hero-copy-left);
+    padding-right: var(--page-gutter);
+  }
+
+  .hero-portrait {
+    justify-content: flex-end;
+    overflow: visible;
+    padding: 28px max(0px, calc(var(--hero-copy-left) - 104px)) 28px 0;
+  }
+
+  .hero-portrait img {
+    flex-shrink: 0;
+    max-width: none;
+    width: 570px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -640,7 +528,7 @@ footer p {
     min-height: 255px;
   }
 
-  .research-card h2 {
+  .research-card h3 {
     margin-top: 44px;
   }
 }
@@ -671,8 +559,8 @@ footer p {
   }
 
   .hero-copy {
-    padding-top: 78px;
     padding-bottom: 82px;
+    padding-top: 78px;
   }
 
   .intro,
@@ -716,8 +604,6 @@ footer p {
   }
 
   footer {
-    align-items: center;
-    flex-direction: row;
     gap: 12px;
     justify-content: space-between;
     padding: 28px 22px;
