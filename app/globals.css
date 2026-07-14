@@ -7,6 +7,7 @@
   --orange: #e6692a;
   --gold: #ed9530;
   --red: #cc2132;
+  --red-deep: #a7192b;
   --olive: #988a20;
   --white: #fffdf8;
   --line: rgba(30, 64, 79, 0.22);
@@ -18,6 +19,11 @@
 
 * {
   box-sizing: border-box;
+}
+
+*::selection {
+  background: var(--ink);
+  color: var(--white);
 }
 
 html {
@@ -40,6 +46,39 @@ main {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:focus-visible {
+  border-radius: 2px;
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  background: var(--ink);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  left: var(--page-gutter);
+  padding: 10px 14px;
+  position: absolute;
+  top: -100px;
+  z-index: 20;
+}
+
+.skip-link:focus {
+  top: 14px;
+}
+
+.sr-only {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
 
 .site-header {
@@ -68,18 +107,20 @@ a {
 }
 
 .site-nav a {
+  color: var(--ink);
   font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 26px;
-  opacity: 0.35;
+  opacity: 0.68;
+  padding: 5px 0;
   transition: color 160ms ease, opacity 160ms ease;
 }
 
 .site-nav a.active,
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  color: var(--red);
+  color: var(--red-deep);
   opacity: 1;
 }
 
@@ -191,7 +232,7 @@ a {
 }
 
 .eyebrow {
-  color: var(--red);
+  color: var(--red-deep);
   margin-bottom: 22px;
 }
 
@@ -206,6 +247,7 @@ h1,
 h2,
 h3 {
   letter-spacing: -0.055em;
+  text-wrap: balance;
 }
 
 h1 {
@@ -221,6 +263,7 @@ h1 {
   line-height: 1.52;
   margin-bottom: 42px;
   max-width: 580px;
+  text-wrap: pretty;
 }
 
 .intro p {
@@ -243,10 +286,14 @@ h1 {
 }
 
 .primary-link {
+  align-items: center;
   background: var(--ink);
   color: var(--white);
+  display: inline-flex;
   font-size: 16px;
   font-weight: 700;
+  line-height: 1.2;
+  min-height: 48px;
   padding: 15px 19px 16px;
   transition: background 160ms ease, transform 160ms ease;
 }
@@ -424,6 +471,7 @@ h1 {
   font-size: 16px;
   line-height: 1.48;
   max-width: 300px;
+  text-wrap: pretty;
 }
 
 .card-arrow {
@@ -469,7 +517,7 @@ h1 {
 }
 
 .resources-heading .eyebrow {
-  color: var(--gold);
+  color: var(--white);
 }
 
 .resource-list {
@@ -488,7 +536,7 @@ h1 {
 
 .resource-row > p,
 .resource-row > span {
-  color: var(--gold);
+  color: var(--white);
 }
 
 .resource-row h2 {
@@ -501,6 +549,7 @@ h1 {
   font-size: 16px;
   line-height: 1.45;
   margin-bottom: 0;
+  text-wrap: pretty;
 }
 
 .resource-row > span {
@@ -536,6 +585,21 @@ footer p {
   object-fit: cover;
   object-position: 50% 70%;
   width: 48px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @media (max-width: 900px) {

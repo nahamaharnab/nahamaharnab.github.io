@@ -23,7 +23,7 @@ export default function ResourcesPage() {
     <main>
       <SiteHeader active="resources" />
 
-      <section className="resources-section page-section">
+      <section className="resources-section page-section" id="main-content">
         <div className="section-heading resources-heading">
           <p className="eyebrow">02 — resources</p>
           <h1>Useful material, kept easy to find.</h1>

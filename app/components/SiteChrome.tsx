@@ -13,6 +13,9 @@ const navigation = [
 export function SiteHeader({ active }: SiteHeaderProps) {
   return (
     <header className="site-header">
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
       <a className="wordmark" href="/" aria-label="Maharnab Naha home">
         Maharnab Naha
       </a>

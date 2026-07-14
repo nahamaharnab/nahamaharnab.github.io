@@ -26,7 +26,7 @@ export default function ResearchPage() {
     <main>
       <SiteHeader active="research" />
 
-      <section className="research-section page-section">
+      <section className="research-section page-section" id="main-content">
         <div className="section-heading">
           <p className="eyebrow">01 — research</p>
           <h1>A place for the work in progress.</h1>

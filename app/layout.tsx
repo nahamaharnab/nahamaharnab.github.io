@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Maharnab Naha | Personal Research Website",
+  title: "Maharnab Naha | Personal Academic Website",
   description:
     "Research, working papers, and academic resources from Maharnab Naha.",
   icons: {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon.svg",
   },
   openGraph: {
-    title: "Maharnab Naha | Personal Research Website",
+    title: "Maharnab Naha | Personal Academic Website",
     description:
       "Research, working papers, and academic resources from Maharnab Naha.",
     type: "website",
