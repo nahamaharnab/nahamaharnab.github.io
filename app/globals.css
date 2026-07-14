@@ -12,6 +12,7 @@
   --line: rgba(30, 64, 79, 0.22);
   --cloth-indigo: #6573a9;
   --cloth-mist: #aeb8de;
+  --page-gutter: clamp(40px, 8vw, 150px);
 }
 
 * {
@@ -45,12 +46,9 @@ a {
   background: rgba(233, 189, 150, 0.93);
   border-bottom: 1px solid var(--line);
   display: flex;
-  flex-direction: column;
-  gap: 19px;
-  justify-content: center;
-  padding: 31px max(5vw, 40px) 27px;
+  justify-content: space-between;
+  padding: 31px var(--page-gutter) 27px;
   position: sticky;
-  text-align: center;
   top: 0;
   z-index: 10;
   backdrop-filter: blur(12px);
@@ -66,7 +64,6 @@ a {
 .site-nav {
   display: flex;
   gap: 40px;
-  justify-content: center;
 }
 
 .site-nav a {
@@ -87,7 +84,7 @@ a {
 
 .hero {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
   isolation: isolate;
   min-height: 710px;
   overflow: hidden;
@@ -112,13 +109,10 @@ a {
 .hero-copy {
   align-self: center;
   isolation: isolate;
-  margin: 0 auto;
   max-width: 760px;
   overflow: hidden;
-  padding: 104px 10vw 116px max(5vw, 40px);
+  padding: 104px var(--page-gutter) 116px;
   position: relative;
-  text-align: center;
-  width: 100%;
   z-index: 1;
 }
 
@@ -224,8 +218,6 @@ h1 {
 .intro {
   font-size: 20px;
   line-height: 1.52;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 42px;
   max-width: 580px;
 }
@@ -247,7 +239,6 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 26px;
-  justify-content: center;
 }
 
 .primary-link {
@@ -299,9 +290,8 @@ h1 {
 .resources-section {
   isolation: isolate;
   overflow: hidden;
-  padding: 132px max(5vw, 40px);
+  padding: 132px var(--page-gutter);
   position: relative;
-  text-align: center;
 }
 
 .research-section > *,
@@ -349,8 +339,6 @@ h1 {
 }
 
 .section-heading {
-  margin-left: auto;
-  margin-right: auto;
   max-width: 710px;
 }
 
@@ -360,16 +348,12 @@ h1 {
   font-weight: 800;
   line-height: 0.94;
   margin-bottom: 25px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .section-heading > p:not(.eyebrow) {
   font-size: 19px;
   line-height: 1.5;
   max-width: 610px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .section-heading > p:not(.eyebrow) + p:not(.eyebrow) {
@@ -392,7 +376,6 @@ h1 {
   min-height: 355px;
   padding: 32px;
   position: relative;
-  text-align: center;
   transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
@@ -421,16 +404,13 @@ h1 {
   font-size: 16px;
   line-height: 1.48;
   max-width: 300px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .card-arrow {
   bottom: 25px;
   font-size: 30px;
-  left: 50%;
   position: absolute;
-  transform: translateX(-50%);
+  right: 30px;
 }
 
 .resources-section {
@@ -474,18 +454,15 @@ h1 {
 
 .resource-list {
   border-top: 1px solid rgba(255, 253, 248, 0.52);
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 72px;
-  max-width: 940px;
 }
 
 .resource-row {
   align-items: center;
   border-bottom: 1px solid rgba(255, 253, 248, 0.52);
   display: grid;
-  gap: 13px;
-  grid-template-columns: 1fr;
+  gap: 32px;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
   padding: 31px 0 34px;
 }
 
@@ -509,7 +486,6 @@ h1 {
 .resource-row > span {
   border: 1px solid rgba(255, 253, 248, 0.66);
   font-size: 11px;
-  justify-self: center;
   padding: 8px 10px;
 }
 
@@ -519,8 +495,8 @@ footer {
   color: var(--white);
   display: flex;
   gap: 14px;
-  justify-content: center;
-  padding: 31px max(5vw, 40px);
+  justify-content: flex-end;
+  padding: 31px var(--page-gutter);
 }
 
 main > footer {
@@ -544,7 +520,7 @@ footer p {
 
 @media (max-width: 900px) {
   .site-header {
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     gap: 22px;
   }
@@ -558,7 +534,8 @@ footer p {
   }
 
   .hero-copy {
-    padding-right: max(5vw, 40px);
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
   }
 
   .hero-art {
@@ -642,22 +619,22 @@ footer p {
   }
 
   .resource-row {
-    align-items: center;
+    align-items: start;
     gap: 12px;
-    grid-template-columns: 1fr;
+    grid-template-columns: 42px minmax(0, 1fr);
   }
 
   .resource-row > span {
-    grid-column: auto;
-    justify-self: center;
-    margin-top: 0;
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 7px;
   }
 
   footer {
     align-items: center;
     flex-direction: row;
     gap: 12px;
-    justify-content: center;
+    justify-content: space-between;
     padding: 28px 22px;
   }
 }
