@@ -186,38 +186,17 @@ h1 {
   position: relative;
 }
 
-.hero-art p {
-  color: var(--gold);
-  font-size: clamp(110px, 17vw, 270px);
-  font-weight: 800;
-  letter-spacing: -0.13em;
-  line-height: 0.8;
-  margin: 0;
-  position: relative;
-  transform: translateX(-0.07em);
-  z-index: 1;
+.hero-portrait {
+  padding: clamp(32px, 5vw, 76px);
 }
 
-.spark {
-  background: var(--orange);
-  clip-path: polygon(50% 0, 64% 36%, 100% 50%, 64% 64%, 50% 100%, 36% 64%, 0 50%, 36% 36%);
-  position: absolute;
-}
-
-.spark-large {
-  height: min(35vw, 500px);
-  right: -8%;
-  top: -11%;
-  width: min(35vw, 500px);
-}
-
-.spark-small {
-  background: var(--paper);
-  bottom: 9%;
-  height: 118px;
-  left: 13%;
-  transform: rotate(8deg);
-  width: 118px;
+.hero-portrait img {
+  display: block;
+  height: auto;
+  max-height: 610px;
+  max-width: 100%;
+  object-fit: contain;
+  width: min(100%, 570px);
 }
 
 .research-section,
@@ -384,9 +363,8 @@ footer p {
     min-height: 410px;
   }
 
-  .spark-large {
-    height: 380px;
-    width: 380px;
+  .hero-portrait {
+    padding: 42px;
   }
 
   .research-grid {
@@ -441,14 +419,8 @@ footer p {
     min-height: 300px;
   }
 
-  .spark-large {
-    height: 290px;
-    width: 290px;
-  }
-
-  .spark-small {
-    height: 78px;
-    width: 78px;
+  .hero-portrait {
+    padding: 28px;
   }
 
   .research-section,

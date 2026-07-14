@@ -33,10 +33,11 @@ export default function AboutPage() {
             </a>
           </div>
         </div>
-        <div className="hero-art" aria-hidden="true">
-          <div className="spark spark-large" />
-          <div className="spark spark-small" />
-          <p>MH</p>
+        <div className="hero-art hero-portrait">
+          <img
+            src="/maharnab-portrait.png"
+            alt="Painted caricature of Maharnab Naha wearing round glasses and a blue jacket."
+          />
         </div>
       </section>
 
