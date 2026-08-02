@@ -264,9 +264,9 @@ main {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Google Sans", Helvetica, "Helvetica Neue", Arial, sans-serif;
   font-size: var(--text-sm);
-  font-weight: 400;
+  font-weight: 500;
   gap: var(--space-2);
   line-height: 1.5;
   margin-top: var(--space-5);
