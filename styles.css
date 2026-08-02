@@ -210,7 +210,7 @@ p {
 .identity-email {
   color: var(--ink);
   font-size: var(--text-sm);
-  margin-top: var(--space-4);
+  margin-top: var(--space-2);
   overflow-wrap: anywhere;
 }
 
