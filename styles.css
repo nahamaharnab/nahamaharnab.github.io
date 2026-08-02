@@ -9,6 +9,7 @@
   --white: #fffdf8;
   --line: rgba(30, 64, 79, 0.22);
   --page-gutter: clamp(40px, 8vw, 150px);
+  --about-frame-edge: max(var(--page-gutter), calc((100vw - 1236px) / 2));
 }
 
 * {
@@ -100,7 +101,7 @@ section {
   border-bottom: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
-  padding: 31px var(--page-gutter) 27px;
+  padding: 31px var(--about-frame-edge) 27px;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -438,6 +439,7 @@ footer p {
     column-gap: clamp(32px, 5vw, 96px);
     grid-template-columns: minmax(0, 620px) minmax(320px, 520px);
     justify-content: center;
+    padding: 0 var(--about-frame-edge);
   }
 
   .hero-copy {
