@@ -80,7 +80,7 @@ p {
 .site-shell {
   column-gap: clamp(80px, 16vw, 210px);
   display: grid;
-  grid-template-columns: var(--sidebar-width) minmax(0, 450px);
+  grid-template-columns: var(--sidebar-width) minmax(0, 620px);
   margin-top: clamp(68px, 8vh, 112px);
 }
 
@@ -150,7 +150,9 @@ main {
 .page-content {
   font-size: 20px;
   line-height: 1.5;
-  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 440px;
   padding: 30px 32px;
 }
 
