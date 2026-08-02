@@ -188,6 +188,15 @@ p {
   padding: 0.2rem;
 }
 
+.pronunciation-audio .material-symbols-outlined {
+  font-size: 1rem;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 20;
+}
+
 .pronunciation-audio:hover,
 .pronunciation-audio:focus-visible {
   color: var(--ink);
