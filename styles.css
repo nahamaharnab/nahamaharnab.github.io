@@ -14,9 +14,9 @@ html {
 }
 
 body {
-  background-color: #fff;
+  background-color: #f8ebe6;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.87), rgba(255, 255, 255, 0.87)),
+    linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)),
     url("/woven-background.jpg");
   background-position: center, top left;
   background-repeat: repeat, repeat;
@@ -143,17 +143,11 @@ p {
 }
 
 main {
+  background: #fff;
   min-width: 0;
 }
 
 .page-content {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.94) 8%,
-    rgba(255, 255, 255, 0.9) 92%,
-    rgba(255, 255, 255, 0) 100%
-  );
   font-size: 20px;
   line-height: 1.5;
   max-width: 450px;
