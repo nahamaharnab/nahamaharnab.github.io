@@ -286,6 +286,11 @@ main {
   text-decoration: underline;
 }
 
+.publication-title {
+  color: var(--accent);
+  font-weight: 400;
+}
+
 .publication-entry {
   color: var(--muted);
   max-width: 100%;
