@@ -5,11 +5,9 @@
   --accent: #9b1712;
   --page-width: 60rem;
   --content-width: 31.5rem;
-  --sidebar-width: 17rem;
   --profile-size: 13.75rem;
   --sidebar-top: clamp(4.25rem, 8vh, 7rem);
   --page-gutter: 3rem;
-  --grid-gap: clamp(2.5rem, 5vw, 4.25rem);
   --space-1: 0.5rem;
   --space-2: 0.75rem;
   --space-3: 1rem;
@@ -103,21 +101,30 @@ p {
 }
 
 .site-shell {
+  background: var(--paper);
+  border: 1px solid rgba(32, 32, 32, 0.14);
   align-items: start;
-  column-gap: var(--grid-gap);
   display: grid;
   flex: 1;
-  grid-template-columns: var(--sidebar-width) minmax(0, 38.75rem);
+  grid-template-columns: minmax(0, 1fr);
   margin-top: var(--sidebar-top);
+  padding: var(--space-5);
+  row-gap: 0;
 }
 
 .site-sidebar {
+  align-items: end;
+  column-gap: var(--space-6);
+  display: grid;
+  grid-template-columns: var(--profile-size) minmax(0, 1fr);
+  grid-template-rows: auto auto;
   padding: 0;
 }
 
 .profile-link {
   border-radius: 50%;
   display: block;
+  grid-row: 1 / span 2;
   height: var(--profile-size);
   overflow: hidden;
   width: var(--profile-size);
@@ -134,12 +141,13 @@ p {
 }
 
 .wordmark {
+  align-self: end;
   display: block;
   font-size: var(--text-3xl);
   font-weight: 300;
   letter-spacing: 0.02em;
   line-height: 1.18;
-  margin-top: var(--space-5);
+  margin-top: 0;
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
@@ -147,9 +155,11 @@ p {
 
 .site-nav {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-  margin-top: var(--space-6);
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
+  grid-column: 2;
+  margin-top: var(--space-4);
 }
 
 .site-nav a {
@@ -170,7 +180,8 @@ p {
 }
 
 main {
-  background: var(--paper);
+  background: transparent;
+  border-top: 1px solid rgba(32, 32, 32, 0.14);
   min-width: 0;
 }
 
@@ -267,14 +278,8 @@ main {
 }
 
 @media (min-width: 47.5625rem) {
-  .site-sidebar {
-    align-self: start;
-    position: sticky;
-    top: var(--sidebar-top);
-  }
-
   main {
-    grid-column: 2;
+    grid-column: 1;
     padding-bottom: var(--space-5);
   }
 }
@@ -297,6 +302,7 @@ main {
   .site-shell {
     display: block;
     margin-top: var(--space-4);
+    padding: var(--space-4);
   }
 
   .site-sidebar {
@@ -330,7 +336,7 @@ main {
   }
 
   .page-content {
-    margin-top: var(--space-7);
+    margin-top: 0;
     max-width: var(--content-width);
     padding: var(--space-4);
   }
