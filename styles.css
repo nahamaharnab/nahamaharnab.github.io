@@ -14,7 +14,13 @@ html {
 }
 
 body {
-  background: #fff;
+  background-color: #fff;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.87), rgba(255, 255, 255, 0.87)),
+    url("/woven-background.jpg");
+  background-position: center, top left;
+  background-repeat: repeat, repeat;
+  background-size: auto, 360px auto;
   color: var(--ink);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
@@ -198,6 +204,10 @@ main {
 }
 
 @media (max-width: 760px) {
+  body {
+    background-size: auto, 280px auto;
+  }
+
   .site-shell,
   .site-footer {
     width: min(var(--page-width), calc(100% - 40px));
