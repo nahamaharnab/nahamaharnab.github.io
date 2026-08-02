@@ -22,5 +22,6 @@ pronunciationButtons.forEach((button) => {
 document.querySelectorAll("[data-placeholder-download]").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
+    window.alert("CV coming soon.");
   });
 });

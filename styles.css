@@ -216,21 +216,15 @@ p {
   margin-top: var(--space-4);
 }
 
-.identity-email {
+.identity-email,
+.identity-cv {
   color: var(--accent);
   overflow-wrap: anywhere;
+  text-decoration: underline;
 }
 
 .identity-bullet {
   color: var(--muted);
-}
-
-.identity-cv {
-  color: var(--ink);
-}
-
-.identity-cv[aria-disabled="true"] {
-  cursor: not-allowed;
 }
 
 .site-nav {
