@@ -2,6 +2,7 @@
   --ink: #202020;
   --muted: #858585;
   --paper: #f8ebe6;
+  --accent: #9b1712;
   --page-width: 60rem;
   --content-width: 31.5rem;
   --sidebar-width: 17rem;
@@ -196,25 +197,27 @@ main {
 }
 
 .content-list {
-  margin-top: var(--space-6);
+  margin-top: 0;
 }
 
 .content-item + .content-item {
-  margin-top: var(--space-5);
+  border-top: 1px solid rgba(32, 32, 32, 0.14);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
 }
 
 .content-item h2 {
+  color: var(--muted);
   font-size: var(--text-lg);
-  font-weight: 500;
-  letter-spacing: 0.09em;
+  font-weight: 700;
+  letter-spacing: 0;
   line-height: 1.3;
-  margin-bottom: var(--space-1);
-  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+  text-transform: none;
 }
 
-.content-item p {
-  color: var(--muted);
-  max-width: 26.875rem;
+.content-item-empty h2 {
+  margin-bottom: 0;
 }
 
 .publication-list {
@@ -224,23 +227,34 @@ main {
 }
 
 .publication-list li + li {
-  border-top: 1px solid rgba(32, 32, 32, 0.14);
   margin-top: var(--space-4);
-  padding-top: var(--space-4);
 }
 
 .publication-list a {
-  color: var(--ink);
-  font-weight: 600;
+  color: var(--accent);
+  font-weight: 400;
+  text-decoration: none;
 }
 
-.publication-list p {
-  margin-top: var(--space-1);
+.publication-list a:hover,
+.publication-list a:focus-visible {
+  text-decoration: underline;
+}
+
+.publication-entry {
+  color: var(--muted);
+  max-width: 100%;
 }
 
 .scholar-profile-link {
+  color: var(--muted);
   font-size: inherit;
   margin-top: var(--space-5);
+}
+
+.scholar-profile-link a {
+  color: var(--accent);
+  font-weight: 400;
 }
 
 .site-footer {
