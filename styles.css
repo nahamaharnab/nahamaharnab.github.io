@@ -158,7 +158,7 @@ p {
   letter-spacing: 0.11em;
   line-height: 1.2;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: lowercase;
   width: fit-content;
 }
 

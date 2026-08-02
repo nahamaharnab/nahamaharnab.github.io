@@ -16,6 +16,7 @@ await Promise.all([
 await Promise.all([
   cp(join(root, "index.html"), join(client, "index.html")),
   cp(join(root, "research"), join(client, "research"), { recursive: true }),
+  cp(join(root, "work-in-progress"), join(client, "work-in-progress"), { recursive: true }),
   cp(join(root, "resources"), join(client, "resources"), { recursive: true }),
   cp(join(root, "styles.css"), join(client, "styles.css")),
   cp(join(root, "public"), client, { recursive: true }),
@@ -31,6 +32,8 @@ await writeFile(
       "/": "/index.html",
       "/research": "/research/index.html",
       "/research/": "/research/index.html",
+      "/work-in-progress": "/work-in-progress/index.html",
+      "/work-in-progress/": "/work-in-progress/index.html",
       "/resources": "/resources/index.html",
       "/resources/": "/resources/index.html",
     };
