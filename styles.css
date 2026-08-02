@@ -19,7 +19,7 @@ body {
   background-color: var(--paper);
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
-    url("/woven-background.jpg");
+    url("/images/woven-background.jpg");
   background-position: center, top left;
   background-repeat: repeat, repeat;
   background-size: auto, 360px auto;

@@ -3,3 +3,4 @@
 /.wrangler/
 /dist/
 .DS_Store
+.Rhistory
