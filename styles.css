@@ -72,7 +72,7 @@ p {
 }
 
 .site-shell {
-  column-gap: clamp(120px, 30vw, 360px);
+  column-gap: clamp(80px, 16vw, 210px);
   display: grid;
   grid-template-columns: var(--sidebar-width) minmax(0, 450px);
   margin-top: 34px;
