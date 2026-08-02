@@ -329,6 +329,11 @@ main {
   text-decoration: underline;
 }
 
+.publication-list .publication-resource-link {
+  font-size: 0.875em;
+  white-space: nowrap;
+}
+
 .publication-title {
   color: var(--accent);
   font-weight: 400;
