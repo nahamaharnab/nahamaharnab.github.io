@@ -7,6 +7,14 @@
       name="description"
       content="Academic resources, research materials, and teaching notes by Maharnab Naha."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Resources | Maharnab Naha" />
+    <meta
+      property="og:description"
+      content="Academic resources, research materials, and teaching notes by Maharnab Naha."
+    />
+    <meta property="og:image" content="https://maharnab-naha-academic.nahamaharnab11.chatgpt.site/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/styles.css" />
     <title>Resources | Maharnab Naha</title>
@@ -14,61 +22,52 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <header class="site-header">
-      <a class="wordmark" href="/" aria-label="Maharnab Naha home">
-        Maharnab Naha
-      </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="/">About Me</a>
-        <a href="/research/">Research</a>
-        <a href="/resources/" aria-current="page">Resources</a>
-      </nav>
-    </header>
+    <div class="site-shell">
+      <header class="site-sidebar">
+        <a class="profile-link" href="/" aria-label="Maharnab Naha home">
+          <img
+            class="profile-image"
+            src="/maharnab-profile-reference-details.png"
+            alt="Painted caricature of Maharnab Naha wearing round glasses and a blue jacket."
+          />
+        </a>
+        <a class="wordmark" href="/">Maharnab Naha</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="/">About Me</a>
+          <a href="/research/">Research</a>
+          <a href="/resources/" aria-current="page">Resources</a>
+        </nav>
+      </header>
 
-    <main id="main-content">
-      <section class="resources-section page-section" aria-labelledby="resources-title">
-        <div class="section-heading resources-heading">
-          <p class="eyebrow">02 — resources</p>
-          <h1 id="resources-title">Useful material, kept easy to find.</h1>
-        </div>
+      <main id="main-content">
+        <section class="page-content" aria-labelledby="resources-title">
+          <h1 id="resources-title">Resources</h1>
 
-        <div class="resource-list">
-          <article class="resource-row">
-            <p>01</p>
-            <div>
+          <div class="content-list">
+            <article class="content-item">
               <h2>Curriculum vitae</h2>
               <p>Add the current PDF of your academic CV here.</p>
-            </div>
-            <span>Coming soon</span>
-          </article>
+            </article>
 
-          <article class="resource-row">
-            <p>02</p>
-            <div>
+            <article class="content-item">
               <h2>Research materials</h2>
               <p>Share data, code, replication packages, and research notes.</p>
-            </div>
-            <span>Coming soon</span>
-          </article>
+            </article>
 
-          <article class="resource-row">
-            <p>03</p>
-            <div>
+            <article class="content-item">
               <h2>Teaching &amp; notes</h2>
               <p>
                 Collect course materials and writing intended for a broader
                 audience.
               </p>
-            </div>
-            <span>Coming soon</span>
-          </article>
-        </div>
-      </section>
-    </main>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
 
-    <footer>
+    <footer class="site-footer">
       <p>last updated · August 2026</p>
-      <img class="footer-tiger" src="/tiger-footer-transparent.png" alt="" />
     </footer>
   </body>
 </html>
