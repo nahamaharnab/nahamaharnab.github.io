@@ -162,11 +162,40 @@ p {
   min-width: 0;
 }
 
+.pronunciation-line {
+  align-items: center;
+  display: flex;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
 .pronunciation {
   color: var(--muted);
   font-size: var(--text-sm);
   letter-spacing: 0.04em;
-  margin-top: var(--space-2);
+}
+
+.pronunciation-audio {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: var(--text-sm);
+  justify-content: center;
+  line-height: 1;
+  padding: 0.2rem;
+}
+
+.pronunciation-audio:hover,
+.pronunciation-audio:focus-visible {
+  color: var(--ink);
+}
+
+.pronunciation-audio:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 0.15rem;
 }
 
 .identity-email {
