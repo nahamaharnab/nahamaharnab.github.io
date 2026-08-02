@@ -207,6 +207,32 @@ p {
   outline-offset: 0.15rem;
 }
 
+.identity-contact {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: var(--text-sm);
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.identity-email {
+  color: var(--accent);
+  overflow-wrap: anywhere;
+}
+
+.identity-bullet {
+  color: var(--muted);
+}
+
+.identity-cv {
+  color: var(--ink);
+}
+
+.identity-cv[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
 .site-nav {
   display: flex;
   flex-direction: row;
@@ -256,27 +282,6 @@ main {
 
 .intro p + p {
   margin-top: var(--space-5);
-}
-
-.about-contact {
-  margin-top: var(--space-5);
-}
-
-.about-email {
-  color: var(--ink);
-  overflow-wrap: anywhere;
-}
-
-.about-cv {
-  margin-top: var(--space-2);
-}
-
-.about-cv a {
-  color: var(--accent);
-}
-
-.about-cv a[aria-disabled="true"] {
-  cursor: not-allowed;
 }
 
 .content-list {
