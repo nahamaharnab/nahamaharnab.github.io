@@ -3,7 +3,7 @@
   --muted: #595959;
   --line: #d8d8d8;
   --page-width: 1120px;
-  --sidebar-width: 230px;
+  --sidebar-width: 270px;
 }
 
 * {
@@ -84,16 +84,16 @@ h2 {
 .profile-link {
   border-radius: 50%;
   display: block;
-  width: 118px;
+  width: 180px;
 }
 
 .profile-image {
   background: #f4f4f4;
   border-radius: 50%;
   display: block;
-  height: 118px;
+  height: 180px;
   object-fit: cover;
-  width: 118px;
+  width: 180px;
 }
 
 .wordmark {
