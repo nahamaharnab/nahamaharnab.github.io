@@ -18,3 +18,9 @@ pronunciationButtons.forEach((button) => {
     window.speechSynthesis.speak(pronunciation);
   });
 });
+
+document.querySelectorAll("[data-placeholder-download]").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+  });
+});

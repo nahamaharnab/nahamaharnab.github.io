@@ -207,13 +207,6 @@ p {
   outline-offset: 0.15rem;
 }
 
-.identity-email {
-  color: var(--ink);
-  font-size: var(--text-sm);
-  margin-top: var(--space-2);
-  overflow-wrap: anywhere;
-}
-
 .site-nav {
   display: flex;
   flex-direction: row;
@@ -263,6 +256,27 @@ main {
 
 .intro p + p {
   margin-top: var(--space-5);
+}
+
+.about-contact {
+  margin-top: var(--space-5);
+}
+
+.about-email {
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.about-cv {
+  margin-top: var(--space-2);
+}
+
+.about-cv a {
+  color: var(--accent);
+}
+
+.about-cv a[aria-disabled="true"] {
+  cursor: not-allowed;
 }
 
 .content-list {
