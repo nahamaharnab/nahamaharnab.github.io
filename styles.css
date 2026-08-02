@@ -119,7 +119,7 @@ p {
   grid-template-columns:
     minmax(0, 1fr) var(--profile-size) max-content minmax(0, 1fr);
   grid-template-rows: auto auto;
-  padding: 0;
+  padding: 0 0 var(--space-4);
 }
 
 .profile-link {
@@ -200,17 +200,12 @@ main {
   padding: var(--space-5);
 }
 
-.intro,
-.lede {
+.intro {
   max-width: 100%;
 }
 
 .intro p + p {
   margin-top: var(--space-5);
-}
-
-.lede {
-  margin-bottom: var(--space-6);
 }
 
 .content-list {
@@ -261,17 +256,6 @@ main {
 .publication-entry {
   color: var(--muted);
   max-width: 100%;
-}
-
-.scholar-profile-link {
-  color: var(--muted);
-  font-size: inherit;
-  margin-top: var(--space-5);
-}
-
-.scholar-profile-link a {
-  color: var(--accent);
-  font-weight: 400;
 }
 
 .site-footer {
@@ -357,10 +341,6 @@ main {
 
   .intro p + p {
     margin-top: var(--space-4);
-  }
-
-  .lede {
-    margin-bottom: var(--space-5);
   }
 
   .site-footer {
