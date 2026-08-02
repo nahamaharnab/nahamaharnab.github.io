@@ -292,6 +292,52 @@ main {
   font-weight: 400;
 }
 
+.abstract-toggle {
+  margin-top: var(--space-2);
+}
+
+.abstract-toggle summary {
+  border: 1px solid rgba(32, 32, 32, 0.24);
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: var(--text-2xs);
+  letter-spacing: 0.08em;
+  list-style: none;
+  padding: 0.15rem var(--space-1);
+  text-transform: lowercase;
+}
+
+.abstract-toggle summary::-webkit-details-marker {
+  display: none;
+}
+
+.abstract-toggle summary::before {
+  content: "+";
+  margin-right: 0.35rem;
+}
+
+.abstract-toggle[open] summary::before {
+  content: "−";
+}
+
+.abstract-toggle summary:hover,
+.abstract-toggle summary:focus-visible {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.abstract-toggle summary:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 0.2rem;
+}
+
+.abstract-text {
+  color: var(--muted);
+  margin-top: var(--space-2);
+}
+
 .publication-entry {
   color: var(--muted);
   max-width: 100%;
