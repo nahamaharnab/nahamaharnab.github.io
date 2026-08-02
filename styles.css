@@ -201,6 +201,41 @@ main {
   text-transform: uppercase;
 }
 
+@media (min-width: 761px) {
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .site-shell {
+    margin-top: 0;
+    min-height: 100vh;
+    padding-top: clamp(68px, 8vh, 112px);
+  }
+
+  .site-sidebar {
+    left: max(24px, calc((100vw - var(--page-width)) / 2));
+    position: fixed;
+    top: clamp(68px, 8vh, 112px);
+    width: var(--sidebar-width);
+  }
+
+  main {
+    grid-column: 2;
+    max-height: calc(100dvh - clamp(68px, 8vh, 112px) - 32px);
+    overflow-y: auto;
+    padding-bottom: 32px;
+  }
+
+  .site-footer {
+    bottom: 32px;
+    left: max(24px, calc((100vw - var(--page-width)) / 2));
+    margin: 0;
+    position: fixed;
+    width: auto;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
