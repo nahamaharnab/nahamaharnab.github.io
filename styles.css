@@ -331,6 +331,7 @@ main {
 
 .publication-list .publication-resource-link {
   font-size: 0.875em;
+  text-decoration: underline;
   white-space: nowrap;
 }
 
