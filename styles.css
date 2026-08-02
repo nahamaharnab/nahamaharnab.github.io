@@ -44,7 +44,7 @@ body {
   color: var(--ink);
   display: flex;
   flex-direction: column;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
   font-size: var(--text-base);
   letter-spacing: 0.035em;
   line-height: 1.45;
@@ -145,13 +145,14 @@ p {
 
 .wordmark {
   display: block;
+  font-family: "Google Sans Flex", Helvetica, "Helvetica Neue", Arial, sans-serif;
   font-size: var(--text-3xl);
   font-weight: 300;
   letter-spacing: 0.02em;
   line-height: 1.18;
   margin-top: 0;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: none;
   white-space: nowrap;
 }
 
@@ -220,6 +221,7 @@ p {
 
 .site-nav a {
   color: var(--muted);
+  font-family: "Google Sans Flex", Helvetica, "Helvetica Neue", Arial, sans-serif;
   font-size: var(--text-base);
   font-weight: 400;
   letter-spacing: 0.08em;
