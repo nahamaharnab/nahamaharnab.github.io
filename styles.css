@@ -207,26 +207,6 @@ p {
   outline-offset: 0.15rem;
 }
 
-.identity-contact {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: var(--text-sm);
-  gap: var(--space-2);
-  margin-top: var(--space-4);
-}
-
-.identity-email,
-.identity-cv {
-  color: var(--accent);
-  overflow-wrap: anywhere;
-  text-decoration: underline;
-}
-
-.identity-bullet {
-  color: var(--muted);
-}
-
 .site-nav {
   display: flex;
   flex-direction: row;
@@ -276,6 +256,25 @@ main {
 
 .intro p + p {
   margin-top: var(--space-5);
+}
+
+.about-contact {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: var(--text-sm);
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+
+.about-contact a {
+  color: var(--accent);
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.about-contact span {
+  color: var(--muted);
 }
 
 .content-list {
@@ -450,15 +449,8 @@ main {
     margin-top: clamp(0.375rem, 1.5vw, var(--space-2));
   }
 
-  .pronunciation,
-  .identity-contact {
+  .pronunciation {
     font-size: clamp(0.6875rem, 3vw, var(--text-sm));
-  }
-
-  .identity-contact {
-    flex-wrap: nowrap;
-    gap: clamp(0.3rem, 1.5vw, var(--space-2));
-    margin-top: clamp(0.75rem, 3vw, var(--space-4));
   }
 
   .site-nav {
