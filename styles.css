@@ -1,6 +1,7 @@
 :root {
   --ink: #202020;
   --muted: #858585;
+  --paper: #f8ebe6;
   --page-width: 1120px;
   --sidebar-width: 260px;
 }
@@ -14,7 +15,7 @@ html {
 }
 
 body {
-  background-color: #f8ebe6;
+  background-color: var(--paper);
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)),
     url("/woven-background.jpg");
@@ -143,7 +144,7 @@ p {
 }
 
 main {
-  background: #fff;
+  background: var(--paper);
   min-width: 0;
 }
 
