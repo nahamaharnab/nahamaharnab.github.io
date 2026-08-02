@@ -113,9 +113,9 @@ p {
   letter-spacing: 0.02em;
   line-height: 1.18;
   margin-top: 25px;
-  max-width: 210px;
   text-decoration: none;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .site-nav {
@@ -234,7 +234,6 @@ main {
   .wordmark {
     font-size: 20px;
     margin: 0;
-    max-width: 150px;
   }
 
   .site-nav {
