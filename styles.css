@@ -143,18 +143,51 @@ p {
 }
 
 .wordmark {
-  align-self: center;
   display: block;
   font-size: var(--text-3xl);
   font-weight: 300;
   letter-spacing: 0.02em;
   line-height: 1.18;
-  grid-column: 3;
-  grid-row: 1;
   margin-top: 0;
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+.identity-block {
+  align-self: center;
+  grid-column: 3;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.pronunciation {
+  color: var(--muted);
+  font-size: var(--text-sm);
+  letter-spacing: 0.04em;
+  margin-top: var(--space-2);
+}
+
+.identity-links {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: var(--text-sm);
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.identity-links a {
+  color: inherit;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.identity-links a:hover,
+.identity-links a:focus-visible {
+  color: var(--ink);
+  text-decoration: underline;
 }
 
 .site-nav {
@@ -313,10 +346,13 @@ main {
     width: 7rem;
   }
 
-  .wordmark {
-    font-size: var(--text-2xl);
+  .identity-block {
     grid-column: 2;
     grid-row: 1;
+  }
+
+  .wordmark {
+    font-size: var(--text-2xl);
     margin: 0;
   }
 
