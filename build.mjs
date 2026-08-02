@@ -15,6 +15,8 @@ await Promise.all([
 
 await Promise.all([
   cp(join(root, "index.html"), join(client, "index.html")),
+  cp(join(root, "research"), join(client, "research"), { recursive: true }),
+  cp(join(root, "resources"), join(client, "resources"), { recursive: true }),
   cp(join(root, "styles.css"), join(client, "styles.css")),
   cp(join(root, "public"), client, { recursive: true }),
   cp(join(root, ".openai", "hosting.json"), join(dist, ".openai", "hosting.json")),
@@ -25,13 +27,21 @@ await writeFile(
   `const worker = {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const routes = {
+      "/": "/index.html",
+      "/research": "/research/index.html",
+      "/research/": "/research/index.html",
+      "/resources": "/resources/index.html",
+      "/resources/": "/resources/index.html",
+    };
+
+    const route = routes[url.pathname];
+    if (!route && !url.pathname.includes(".")) {
+      return new Response("Not found", { status: 404 });
+    }
+
     const assetUrl = new URL(request.url);
-    assetUrl.pathname = url.pathname === "/" ? "/index.html" : url.pathname;
-
-    const response = await env.ASSETS.fetch(new Request(assetUrl, request));
-    if (response.status !== 404 || url.pathname.includes(".")) return response;
-
-    assetUrl.pathname = "/index.html";
+    assetUrl.pathname = route ?? url.pathname;
     return env.ASSETS.fetch(new Request(assetUrl, request));
   },
 };
