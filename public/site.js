@@ -19,9 +19,9 @@ pronunciationButtons.forEach((button) => {
   });
 });
 
-document.querySelectorAll("[data-placeholder-download]").forEach((link) => {
+document.querySelectorAll("[data-placeholder-message]").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
-    window.alert(link.dataset.placeholderMessage || "CV coming soon.");
+    window.alert(link.dataset.placeholderMessage);
   });
 });

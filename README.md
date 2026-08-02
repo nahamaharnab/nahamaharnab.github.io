@@ -1,13 +1,32 @@
-# Maharnab Naha — Personal Academic Website
+# Maharnab Naha — Academic Website
 
-This site is intentionally simple.
+A lightweight, four-page academic website built with plain HTML, CSS, and JavaScript.
 
-- `index.html` contains the about page.
-- `research/index.html` contains the research page.
-- `work-in-progress/index.html` contains the empty work in progress page.
-- `resources/index.html` contains the empty resources page.
-- `styles.css` contains the shared design.
-- `public/images/` contains the site's image assets.
-- `public/favicon.svg` contains the browser icon.
+## Project structure
 
-Run `npm run build` before publishing.
+- `index.html` — about
+- `research/index.html` — research
+- `work-in-progress/index.html` — work in progress
+- `resources/index.html` — resources and study notes
+- `styles.css` — shared layout and design
+- `public/site.js` — pronunciation and placeholder-link behavior
+- `public/images/` — profile, background, and social-preview images
+- `build.mjs` — creates the deployable site and route configuration
+
+## Local development
+
+```sh
+npm run dev
+```
+
+Open `http://localhost:4173`.
+
+## Production build
+
+```sh
+npm run build
+```
+
+The generated site is written to `dist/`. This folder is intentionally ignored by Git because it can always be rebuilt from the source files.
+
+The repository is ready to use as the source for a GitHub-hosted deployment. Add the GitHub Pages workflow when moving the live site to GitHub.
