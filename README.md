@@ -19,7 +19,7 @@ my-website/
 │   ├── social-preview.png
 │   └── woven-background.jpg
 ├── _uploads/
-│   ├── abstract-status-incentives-and-career-motivation.md
+│   ├── abstract-chessproject.md
 │   └── README.md
 ├── .openai/hosting.json
 ├── build.mjs
@@ -31,7 +31,7 @@ The numbered page files stay easy to find without changing the public URLs. The 
 
 ## Adding new material
 
-The build reads `abstract-status-incentives-and-career-motivation.md` or its `.txt` alternative directly into the Research page.
+The build reads `abstract-chessproject.md` or its `.txt` alternative directly into the Research page.
 
 Add a CV as `_uploads/cv-maharnab-naha.pdf`. The next build will activate the existing CV link and publish the PDF under `/uploads/`.
 
