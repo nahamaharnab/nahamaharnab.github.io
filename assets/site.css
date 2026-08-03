@@ -452,10 +452,14 @@ main::before {
   text-decoration: underline;
 }
 
-.publication-list .publication-resource-link {
+.publication-list .publication-resource {
+  color: var(--accent);
   font-size: 0.875em;
-  text-decoration: underline;
   white-space: nowrap;
+}
+
+.publication-list .publication-resource-link {
+  text-decoration: underline;
 }
 
 .publication-title {
