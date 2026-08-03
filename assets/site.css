@@ -518,6 +518,10 @@ main::before {
   margin-top: var(--space-2);
 }
 
+.abstract-text + .abstract-text {
+  margin-top: var(--space-2);
+}
+
 .publication-entry {
   color: var(--muted);
 }

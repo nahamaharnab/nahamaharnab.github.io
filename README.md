@@ -12,13 +12,14 @@ my-website/
 │   ├── 03-work-in-progress.html
 │   └── 04-resources.html
 ├── assets/
-│   ├── favicon.svg
+│   ├── favicon.png
 │   ├── profile.png
 │   ├── site.css
 │   ├── site.js
 │   ├── social-preview.png
 │   └── woven-background.jpg
 ├── _uploads/
+│   ├── abstract-status-incentives-and-career-motivation.md
 │   └── README.md
 ├── .openai/hosting.json
 ├── build.mjs
@@ -30,9 +31,11 @@ The numbered page files stay easy to find without changing the public URLs. The 
 
 ## Adding new material
 
-Place new PDFs, Markdown files, or text files directly in `_uploads/`. Prefix filenames with `cv-`, `abstract-`, `note-`, or `writing-` to identify their purpose. This private intake folder is not deployed or committed automatically.
+The build reads `abstract-status-incentives-and-career-motivation.md` or its `.txt` alternative directly into the Research page.
 
-When a download is approved for public use, move it into `assets/`. It will then be published under `/assets/` after the website is rebuilt.
+Add a CV as `_uploads/cv-maharnab-naha.pdf`. The next build will activate the existing CV link and publish the PDF under `/uploads/`.
+
+Only files explicitly listed in `_uploads/README.md` are connected to the website. Other files remain ignored until they are deliberately wired to a page.
 
 ## Local development
 
