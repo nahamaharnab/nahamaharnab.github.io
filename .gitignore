@@ -4,3 +4,7 @@
 /dist/
 .DS_Store
 .Rhistory
+
+# Private editorial intake. Keep the guide, but do not commit drafts.
+/_uploads/*
+!/_uploads/README.md

@@ -7,7 +7,7 @@
   --font-body: Helvetica, "Helvetica Neue", Arial, sans-serif;
   --font-label: "Google Sans", Helvetica, "Helvetica Neue", Arial, sans-serif;
   --page-width: 52.125rem;
-  --content-width: 31.5rem;
+  --content-width: 35rem;
   --profile-size: 13.75rem;
   --sidebar-top: clamp(4.25rem, 8vh, 7rem);
   --page-gutter: 3rem;
@@ -22,9 +22,55 @@
   --text-2xs: 0.6875rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
-  --text-2xl: 1.6875rem;
-  --text-3xl: 1.875rem;
   --text-4xl: 2.25rem;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+@keyframes page-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes profile-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+}
+
+@keyframes profile-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 * {
@@ -33,13 +79,14 @@
 
 html {
   scroll-behavior: smooth;
+  view-transition-name: none;
 }
 
 body {
   background-color: var(--paper);
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
-    url("/images/woven-background.jpg");
+    url("/assets/woven-background.jpg");
   background-position: center, top left;
   background-repeat: repeat, repeat;
   background-size: auto, 22.5rem auto;
@@ -132,6 +179,7 @@ p {
   grid-row: 1;
   height: var(--profile-size);
   overflow: hidden;
+  view-transition-name: profile-portrait;
   width: var(--profile-size);
 }
 
@@ -163,6 +211,7 @@ p {
   grid-row: 1;
   justify-content: center;
   min-width: 0;
+  view-transition-name: profile-identity;
 }
 
 .pronunciation-line {
@@ -218,6 +267,38 @@ p {
   grid-row: 2;
   justify-content: center;
   margin-top: 0;
+  view-transition-name: primary-navigation;
+}
+
+::view-transition-group(primary-navigation) {
+  animation-duration: 410ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+::view-transition-group(about-content),
+::view-transition-group(inner-content) {
+  animation-duration: 385ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+::view-transition-old(about-content),
+::view-transition-old(inner-content) {
+  animation: 145ms cubic-bezier(0.4, 0, 1, 1) both page-fade-out;
+}
+
+::view-transition-new(about-content),
+::view-transition-new(inner-content) {
+  animation: 250ms 110ms cubic-bezier(0, 0, 0.2, 1) both page-fade-in;
+}
+
+::view-transition-old(profile-portrait),
+::view-transition-old(profile-identity) {
+  animation: 215ms cubic-bezier(0.4, 0, 1, 1) both profile-fade-out;
+}
+
+::view-transition-new(profile-portrait),
+::view-transition-new(profile-identity) {
+  animation: 275ms 100ms cubic-bezier(0, 0, 0.2, 1) both profile-fade-in;
 }
 
 .site-nav a {
@@ -238,9 +319,36 @@ p {
   color: var(--ink);
 }
 
+.page-inner .site-sidebar {
+  display: block;
+  padding: clamp(var(--space-3), 3vw, var(--space-4)) 0 var(--space-1);
+}
+
+.page-inner .site-nav {
+  margin-top: 0;
+}
+
 main {
-  border-top: 1px solid var(--boundary);
   min-width: 0;
+  position: relative;
+}
+
+main::before {
+  background: var(--boundary);
+  content: "";
+  height: 1px;
+  left: clamp(var(--space-3), 4vw, var(--space-4));
+  position: absolute;
+  right: clamp(var(--space-3), 4vw, var(--space-4));
+  top: 0;
+}
+
+.page-about main {
+  view-transition-name: about-content;
+}
+
+.page-inner main {
+  view-transition-name: inner-content;
 }
 
 .page-content {
@@ -250,6 +358,11 @@ main {
   margin-right: auto;
   max-width: var(--content-width);
   padding: var(--space-4);
+}
+
+.page-about .page-content,
+.page-inner .page-content {
+  padding-top: calc(var(--space-5) + var(--space-1));
 }
 
 .intro p + p {
@@ -452,6 +565,12 @@ main {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }
 
