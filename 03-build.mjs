@@ -7,22 +7,22 @@ const client = join(dist, "client");
 const server = join(dist, "server");
 const pages = [
   {
-    source: join("01-pages", "01-about.html"),
+    source: join("pages", "01-about.html"),
     output: "index.html",
     paths: ["/"],
   },
   {
-    source: join("01-pages", "02-research.html"),
+    source: join("pages", "02-research.html"),
     output: join("research", "index.html"),
     paths: ["/research", "/research/"],
   },
   {
-    source: join("01-pages", "03-work-in-progress.html"),
+    source: join("pages", "03-work-in-progress.html"),
     output: join("work-in-progress", "index.html"),
     paths: ["/work-in-progress", "/work-in-progress/"],
   },
   {
-    source: join("01-pages", "04-resources.html"),
+    source: join("pages", "04-resources.html"),
     output: join("resources", "index.html"),
     paths: ["/resources", "/resources/"],
   },
@@ -49,7 +49,7 @@ await Promise.all([
   ...pages.map(({ source, output }) =>
     cp(join(root, source), join(client, output), { recursive: true }),
   ),
-  cp(join(root, "02-assets"), join(client, "assets"), { recursive: true }),
+  cp(join(root, "assets"), join(client, "assets"), { recursive: true }),
   cp(join(root, ".openai", "hosting.json"), join(dist, ".openai", "hosting.json")),
 ]);
 

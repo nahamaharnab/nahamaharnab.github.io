@@ -6,12 +6,12 @@ A lightweight, four-page academic website built with plain HTML, CSS, and JavaSc
 
 ```text
 my-website/
-├── 01-pages/
+├── pages/
 │   ├── 01-about.html
 │   ├── 02-research.html
 │   ├── 03-work-in-progress.html
 │   └── 04-resources.html
-├── 02-assets/
+├── assets/
 │   ├── favicon.svg
 │   ├── profile.png
 │   ├── site.css
@@ -32,7 +32,7 @@ The numbered page files stay easy to find without changing the public URLs. The 
 
 Place new PDFs, Markdown files, or text files directly in `_uploads/`. Prefix filenames with `cv-`, `abstract-`, `note-`, or `writing-` to identify their purpose. This private intake folder is not deployed or committed automatically.
 
-When a download is approved for public use, move it into `02-assets/`. It will then be published under `/assets/` after the website is rebuilt.
+When a download is approved for public use, move it into `assets/`. It will then be published under `/assets/` after the website is rebuilt.
 
 ## Local development
 
