@@ -275,19 +275,16 @@ p {
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-::view-transition-group(about-content),
-::view-transition-group(inner-content) {
+::view-transition-group(page-content) {
   animation-duration: 385ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-::view-transition-old(about-content),
-::view-transition-old(inner-content) {
+::view-transition-old(page-content) {
   animation: 145ms cubic-bezier(0.4, 0, 1, 1) both page-fade-out;
 }
 
-::view-transition-new(about-content),
-::view-transition-new(inner-content) {
+::view-transition-new(page-content) {
   animation: 250ms 110ms cubic-bezier(0, 0, 0.2, 1) both page-fade-in;
 }
 
@@ -331,6 +328,7 @@ p {
 main {
   min-width: 0;
   position: relative;
+  view-transition-name: page-content;
 }
 
 main::before {
@@ -341,14 +339,6 @@ main::before {
   position: absolute;
   right: clamp(var(--space-3), 4vw, var(--space-4));
   top: 0;
-}
-
-.page-about main {
-  view-transition-name: about-content;
-}
-
-.page-inner main {
-  view-transition-name: inner-content;
 }
 
 .page-content {
