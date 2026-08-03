@@ -6,11 +6,11 @@
   --border-soft: rgba(32, 32, 32, 0.14);
   --font-body: Helvetica, "Helvetica Neue", Arial, sans-serif;
   --font-label: "Google Sans", Helvetica, "Helvetica Neue", Arial, sans-serif;
-  --page-width: 60rem;
+  --page-width: 64rem;
   --content-width: 31.5rem;
   --profile-size: 13.75rem;
   --sidebar-top: clamp(4.25rem, 8vh, 7rem);
-  --page-gutter: 3rem;
+  --page-gutter: 2rem;
   --space-1: 0.5rem;
   --space-2: 0.75rem;
   --space-3: 1rem;
@@ -457,7 +457,7 @@ main {
 
 @media (max-width: 47.5rem) {
   :root {
-    --page-gutter: clamp(0.75rem, 5vw, 2.5rem);
+    --page-gutter: clamp(0.5rem, 3vw, 1.5rem);
     --profile-size: clamp(5rem, 24vw, 7rem);
   }
 
