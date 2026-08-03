@@ -21,7 +21,7 @@ my-website/
 ├── _uploads/
 │   └── README.md
 ├── .openai/hosting.json
-├── 03-build.mjs
+├── build.mjs
 ├── package.json
 └── README.md
 ```
