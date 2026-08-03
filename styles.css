@@ -287,10 +287,12 @@ main {
   padding-top: var(--space-4);
 }
 
-.content-item h2 {
+.content-item h2,
+.study-notes h2 {
   color: var(--muted);
+  font-family: var(--font-label);
   font-size: inherit;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0;
   line-height: 1.3;
   margin-bottom: var(--space-4);
@@ -382,12 +384,6 @@ main {
 
 .publication-entry {
   color: var(--muted);
-}
-
-.study-notes h2 {
-  font-size: inherit;
-  font-weight: 700;
-  margin-bottom: var(--space-4);
 }
 
 .study-notes-list {
