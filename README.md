@@ -3,7 +3,7 @@
 A lightweight, dependency-free academic website built with plain HTML, CSS,
 JavaScript, and a small Node.js build script.
 
-Live site: [maharnab-naha-academic.nahamaharnab11.chatgpt.site](https://maharnab-naha-academic.nahamaharnab11.chatgpt.site)
+Live site: [nahamaharnab.github.io](https://nahamaharnab.github.io)
 
 ## Pages
 
@@ -18,7 +18,7 @@ Live site: [maharnab-naha-academic.nahamaharnab11.chatgpt.site](https://maharnab
 my-website/
 ├── .github/
 │   └── workflows/
-│       └── validate.yml
+│       └── deploy-pages.yml
 ├── pages/
 │   ├── 01-about.html
 │   ├── 02-research.html
@@ -96,30 +96,18 @@ The build recreates `dist/` on every run:
 The generated `dist/` folder is ignored by Git because it can always be rebuilt
 from the tracked source files.
 
-## Uploading to GitHub
+## GitHub Pages deployment
 
-The repository is ready to use as a GitHub source repository: generated files,
-local system files, and non-approved uploads are excluded by `.gitignore`.
-Every push and pull request also runs the production build automatically through
-`.github/workflows/validate.yml`, so GitHub will report whether the website can
-be built successfully.
+The public repository is named `nahamaharnab.github.io`, matching the GitHub
+account name so the website is available at the root address
+`https://nahamaharnab.github.io`.
 
-After creating an empty GitHub repository, connect and upload this project:
+Every push to `main` runs `.github/workflows/deploy-pages.yml`, builds the site,
+and publishes `dist/client/` to GitHub Pages. Pull requests run the same build
+as a validation check without deploying.
 
-```sh
-git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
-git push -u origin main
-```
-
-Do not initialize the GitHub repository with another README, `.gitignore`, or
-license when creating it, because this local repository already contains its
-own history and documentation.
-
-The current site uses root-based URLs such as `/research/` and `/assets/`.
-These work on the current site and on a custom domain. If the website will be
-served from a GitHub Pages project subpath such as
-`username.github.io/repository/`, add base-path support before enabling GitHub
-Pages.
+The source stays on `main`; generated files remain outside Git because GitHub
+rebuilds them automatically.
 
 ## Before each upload
 
@@ -128,7 +116,7 @@ Pages.
 3. Confirm that only intended files from `_uploads` are being tracked.
 4. Review the changes, then commit and push them.
 
-## Hosting note
+## Hosting
 
-`.openai/hosting.json` belongs to the current Sites deployment and contains no
-website content. Keep it while this project is also published through Sites.
+GitHub Pages is the primary host. `.openai/hosting.json` keeps the previous
+Sites deployment available as a fallback and contains no website content.
