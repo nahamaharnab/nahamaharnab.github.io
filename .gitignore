@@ -7,7 +7,6 @@
 
 # Build-time website content. Track only files explicitly wired into the site.
 /_uploads/*
-!/_uploads/README.md
 !/_uploads/abstract-chessproject.md
 !/_uploads/abstract-chessproject.txt
 !/_uploads/cv-maharnab-naha.pdf

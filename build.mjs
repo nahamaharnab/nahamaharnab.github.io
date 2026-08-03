@@ -1,7 +1,8 @@
 import { cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, extname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const root = process.cwd();
+const root = dirname(fileURLToPath(import.meta.url));
 const dist = join(root, "dist");
 const client = join(dist, "client");
 const server = join(dist, "server");
@@ -126,8 +127,24 @@ const renderPage = async (source) => {
     html = html.replaceAll(token, await renderAbstract(slug));
   }
 
-  return html.replaceAll("{{cv-link}}", cvLink);
+  html = html.replaceAll("{{cv-link}}", cvLink);
+
+  const unresolvedToken = html.match(/\{\{[^{}]+\}\}/)?.[0];
+  if (unresolvedToken) {
+    throw new Error(`${source} contains an unresolved token: ${unresolvedToken}`);
+  }
+
+  return html;
 };
+
+// Render every page before replacing the last successful build. This keeps
+// dist intact if an upload or page template contains an error.
+const renderedPages = await Promise.all(
+  pages.map(async ({ source, output }) => ({
+    html: await renderPage(source),
+    output,
+  })),
+);
 
 await rm(dist, { force: true, recursive: true });
 await Promise.all([
@@ -142,8 +159,8 @@ await Promise.all(
 );
 
 await Promise.all([
-  ...pages.map(async ({ source, output }) =>
-    writeFile(join(client, output), await renderPage(source)),
+  ...renderedPages.map(({ html, output }) =>
+    writeFile(join(client, output), html),
   ),
   ...(hasCv
     ? [cp(join(uploads, cvFilename), join(publishedUploads, cvFilename))]
