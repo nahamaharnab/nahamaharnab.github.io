@@ -8,7 +8,7 @@
   --font-label: "Google Sans", Helvetica, "Helvetica Neue", Arial, sans-serif;
   --page-width: 52.125rem;
   --content-width: 31.5rem;
-  --profile-size: 13.75rem;
+  --profile-size: 11.75rem;
   --sidebar-top: clamp(4.25rem, 8vh, 7rem);
   --page-gutter: 3rem;
   --space-1: 0.5rem;
@@ -140,7 +140,9 @@ p {
   display: block;
   height: var(--profile-size);
   object-fit: cover;
-  transform: scale(1.3);
+  position: relative;
+  top: 16.75%;
+  transform: scale(1.52);
   width: var(--profile-size);
 }
 
