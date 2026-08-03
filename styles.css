@@ -3,7 +3,7 @@
   --muted: #858585;
   --paper: #f8ebe6;
   --accent: #9b1712;
-  --border-soft: rgba(32, 32, 32, 0.14);
+  --boundary: #dcd7d5;
   --font-body: Helvetica, "Helvetica Neue", Arial, sans-serif;
   --font-label: "Google Sans", Helvetica, "Helvetica Neue", Arial, sans-serif;
   --page-width: 60rem;
@@ -103,7 +103,7 @@ p {
 
 .site-shell {
   background: var(--paper);
-  border: 1px solid var(--border-soft);
+  border: 1px solid var(--boundary);
   align-items: start;
   display: grid;
   flex: 1;
@@ -217,7 +217,7 @@ p {
 }
 
 .site-nav a {
-  color: var(--muted);
+  color: var(--ink);
   font-family: var(--font-label);
   font-size: var(--text-base);
   font-weight: 500;
@@ -229,13 +229,16 @@ p {
 }
 
 .site-nav a:hover,
-.site-nav a:focus-visible,
+.site-nav a:focus-visible {
+  text-decoration: underline;
+}
+
 .site-nav a[aria-current="page"] {
-  color: var(--ink);
+  font-weight: 600;
 }
 
 main {
-  border-top: 1px solid var(--border-soft);
+  border-top: 1px solid var(--boundary);
   min-width: 0;
 }
 
@@ -282,14 +285,14 @@ main {
 }
 
 .content-item + .content-item {
-  border-top: 1px solid var(--border-soft);
+  border-top: 1px solid var(--boundary);
   margin-top: var(--space-6);
   padding-top: var(--space-4);
 }
 
 .content-item h2,
 .study-notes h2 {
-  color: var(--muted);
+  color: var(--ink);
   font-family: var(--font-label);
   font-size: inherit;
   font-weight: 600;
@@ -347,7 +350,7 @@ main {
 }
 
 .abstract-toggle summary {
-  border: 1px solid rgba(32, 32, 32, 0.24);
+  border: 1px solid var(--boundary);
   border-radius: 999px;
   color: var(--muted);
   display: inline-flex;
