@@ -499,7 +499,9 @@ main::before {
   flex-basis: 100%;
 }
 
-.abstract-toggle summary {
+.abstract-toggle summary,
+.paper-action-link {
+  align-items: baseline;
   border: 1px solid var(--boundary);
   border-radius: 999px;
   color: var(--muted);
@@ -530,21 +532,15 @@ main::before {
   outline-offset: 0.2rem;
 }
 
-.paper-action-link {
-  align-items: center;
-  border: 1px solid var(--boundary);
-  border-radius: 999px;
+.publication-list .paper-action-link {
   color: var(--muted);
-  display: inline-flex;
-  font-size: var(--text-2xs);
-  letter-spacing: 0.08em;
-  padding: 0.15rem var(--space-1);
   text-decoration: none;
-  text-transform: lowercase;
 }
 
 .paper-action-link::before {
   content: "↗";
+  font-size: 0.75em;
+  line-height: 1;
   margin-right: 0.35rem;
 }
 
