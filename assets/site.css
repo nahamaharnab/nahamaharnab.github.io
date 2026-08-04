@@ -398,12 +398,6 @@ main::before {
   margin-top: var(--space-5);
 }
 
-.identity-block .about-contact {
-  font-size: var(--text-xs);
-  gap: var(--space-1);
-  margin-top: var(--space-2);
-}
-
 .about-contact a {
   color: var(--accent);
   font: inherit;
