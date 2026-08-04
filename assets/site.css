@@ -484,22 +484,21 @@ main::before {
 }
 
 .paper-actions {
-  align-items: flex-start;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1);
   margin-top: var(--space-2);
 }
 
-.paper-actions .abstract-toggle {
-  margin-top: 0;
+.paper-action-nav {
+  align-items: baseline;
+  display: inline-flex;
+  gap: var(--space-1);
 }
 
-.paper-actions .abstract-toggle[open] {
-  flex-basis: 100%;
+.abstract-panel {
+  width: 100%;
 }
 
 .abstract-toggle summary,
+.paper-action-button,
 .paper-action-link {
   align-items: baseline;
   border: 1px solid var(--boundary);
@@ -512,22 +511,36 @@ main::before {
   text-transform: lowercase;
 }
 
-.abstract-toggle summary::before {
+.paper-action-button {
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+.abstract-toggle summary::before,
+.paper-action-button::before {
   content: "+";
   margin-right: 0.35rem;
 }
 
-.abstract-toggle[open] summary::before {
+.abstract-toggle[open] summary::before,
+.paper-action-button[aria-expanded="true"]::before {
   content: "−";
 }
 
 .abstract-toggle summary:hover,
-.abstract-toggle summary:focus-visible {
+.abstract-toggle summary:focus-visible,
+.paper-action-button:hover,
+.paper-action-button:focus-visible {
   border-color: var(--ink);
   color: var(--ink);
 }
 
-.abstract-toggle summary:focus-visible {
+.abstract-toggle summary:focus-visible,
+.paper-action-button:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 0.2rem;
 }

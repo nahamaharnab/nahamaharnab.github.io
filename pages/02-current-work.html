@@ -22,8 +22,8 @@
       href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/assets/site.css?v=20260804-2" />
-    <script src="/assets/site.js" defer></script>
+    <link rel="stylesheet" href="/assets/site.css?v=20260804-3" />
+    <script src="/assets/site.js?v=20260804-3" defer></script>
     <title>maharnab naha</title>
   </head>
   <body class="page-inner page-current-work">
@@ -54,17 +54,35 @@
                     >
                   </p>
                   <div class="paper-actions">
-                    <details class="abstract-toggle">
-                      <summary>abstract</summary>
-                      {{abstract:status-incentives}}
-                    </details>
-                    <a
-                      class="paper-action-link"
-                      href="#"
-                      data-placeholder-message="Working draft coming soon."
-                      title="Working draft coming soon"
-                      >working draft</a
+                    <div
+                      class="paper-action-nav"
+                      role="group"
+                      aria-label="Working paper resources"
                     >
+                      <button
+                        class="paper-action-button"
+                        type="button"
+                        aria-controls="status-incentives-abstract"
+                        aria-expanded="false"
+                        data-abstract-toggle
+                      >
+                        abstract
+                      </button>
+                      <a
+                        class="paper-action-link"
+                        href="#"
+                        data-placeholder-message="Working draft coming soon."
+                        title="Working draft coming soon"
+                        >working draft</a
+                      >
+                    </div>
+                    <div
+                      class="abstract-panel"
+                      id="status-incentives-abstract"
+                      hidden
+                    >
+                      {{abstract:status-incentives}}
+                    </div>
                   </div>
                 </li>
               </ol>

@@ -25,3 +25,19 @@ document.querySelectorAll("[data-placeholder-message]").forEach((link) => {
     window.alert(link.dataset.placeholderMessage);
   });
 });
+
+document.querySelectorAll("[data-abstract-toggle]").forEach((button) => {
+  const panelId = button.getAttribute("aria-controls");
+  const panel = panelId ? document.getElementById(panelId) : null;
+
+  if (!panel) {
+    return;
+  }
+
+  button.addEventListener("click", () => {
+    const shouldOpen = button.getAttribute("aria-expanded") !== "true";
+
+    button.setAttribute("aria-expanded", String(shouldOpen));
+    panel.hidden = !shouldOpen;
+  });
+});
