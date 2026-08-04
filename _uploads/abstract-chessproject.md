@@ -1,5 +1,0 @@
-# Status Incentives and Career Motivation: Evidence from International Chess Players
-
-## Abstract
-
-Can receiving a higher career status motivate better performance? The key difficulty in answering this is to separate the effect of status itself from the effect of the performance that usually earns it. I address this using the FIDE Rating Compression reform among chess players, which created an exogenous variation in the positional value of players’ career status -- through an one time mechanical increase in player's Rating -- to causally identify its effect on players’ subsequent performance. I find that players who received larger status gains thereafter moved higher on the career-status ladder, by losing fewer games than before i.e. their realized performance improved. I hypothesize that such a status-shock which also raises the expected performance benchmark activates a feedback mechanism through which individuals respond either by protecting their new position i.e. status protection or by performing up to it i.e. status motivation.

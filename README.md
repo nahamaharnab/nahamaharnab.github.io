@@ -32,7 +32,6 @@ my-website/
 │   ├── social-preview.png
 │   └── woven-background.jpg
 ├── _uploads/
-│   ├── abstract-chessproject.md
 │   └── abstract-status-incentives.md
 ├── .openai/
 │   └── hosting.json
