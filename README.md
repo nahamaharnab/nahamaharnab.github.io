@@ -8,8 +8,8 @@ Live site: [nahamaharnab.github.io](https://nahamaharnab.github.io)
 ## Pages
 
 - `/` — about
+- `/current-work/` — current work
 - `/research/` — research
-- `/work-in-progress/` — work in progress
 - `/resources/` — resources
 
 ## Project structure
@@ -21,8 +21,8 @@ my-website/
 │       └── deploy-pages.yml
 ├── pages/
 │   ├── 01-about.html
-│   ├── 02-research.html
-│   ├── 03-work-in-progress.html
+│   ├── 02-current-work.html
+│   ├── 03-research.html
 │   └── 04-resources.html
 ├── assets/
 │   ├── favicon.png
@@ -32,7 +32,8 @@ my-website/
 │   ├── social-preview.png
 │   └── woven-background.jpg
 ├── _uploads/
-│   └── abstract-chessproject.md
+│   ├── abstract-chessproject.md
+│   └── abstract-status-incentives.md
 ├── .openai/
 │   └── hosting.json
 ├── .gitignore
@@ -48,13 +49,17 @@ short and readable.
 
 ### Working-paper abstract
 
-Edit `_uploads/abstract-chessproject.md`. The build reads the text following
+Edit `_uploads/abstract-status-incentives.md`. The build reads the text following
 the `## Abstract` heading and places it inside the expandable abstract on the
-Research page.
+Current Work page.
 
-The build also accepts `_uploads/abstract-chessproject.txt`. Keep only one of
+The build also accepts `_uploads/abstract-status-incentives.txt`. Keep only one of
 the Markdown or text versions; the build stops with a clear error if both are
 present.
+
+The `working draft` control on the Current Work page is currently a clickable
+placeholder. Replace its placeholder link in `pages/02-current-work.html` when
+the paper PDF is ready to publish.
 
 ### CV
 
@@ -112,7 +117,7 @@ rebuilds them automatically.
 ## Before each upload
 
 1. Run `npm run build` and resolve any reported error.
-2. Check that the About, Research, Work in Progress, and Resources pages open.
+2. Check that the About, Current Work, Research, and Resources pages open.
 3. Confirm that only intended files from `_uploads` are being tracked.
 4. Review the changes, then commit and push them.
 

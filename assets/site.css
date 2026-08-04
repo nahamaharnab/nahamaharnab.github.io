@@ -277,23 +277,23 @@ p {
 }
 
 ::view-transition-group(about-content),
+::view-transition-group(current-work-content),
 ::view-transition-group(research-content),
-::view-transition-group(work-in-progress-content),
 ::view-transition-group(resources-content) {
   animation-duration: 385ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 ::view-transition-old(about-content),
+::view-transition-old(current-work-content),
 ::view-transition-old(research-content),
-::view-transition-old(work-in-progress-content),
 ::view-transition-old(resources-content) {
   animation: 145ms cubic-bezier(0.4, 0, 1, 1) both page-fade-out;
 }
 
 ::view-transition-new(about-content),
+::view-transition-new(current-work-content),
 ::view-transition-new(research-content),
-::view-transition-new(work-in-progress-content),
 ::view-transition-new(resources-content) {
   animation: 250ms 110ms cubic-bezier(0, 0, 0.2, 1) both page-fade-in;
 }
@@ -359,8 +359,8 @@ main::before {
   --page-transition-name: research-content;
 }
 
-.page-work-in-progress {
-  --page-transition-name: work-in-progress-content;
+.page-current-work {
+  --page-transition-name: current-work-content;
 }
 
 .page-resources {
@@ -483,6 +483,22 @@ main::before {
   margin-top: var(--space-2);
 }
 
+.paper-actions {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
+.paper-actions .abstract-toggle {
+  margin-top: 0;
+}
+
+.paper-actions .abstract-toggle[open] {
+  flex-basis: 100%;
+}
+
 .abstract-toggle summary {
   border: 1px solid var(--boundary);
   border-radius: 999px;
@@ -510,6 +526,36 @@ main::before {
 }
 
 .abstract-toggle summary:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 0.2rem;
+}
+
+.paper-action-link {
+  align-items: center;
+  border: 1px solid var(--boundary);
+  border-radius: 999px;
+  color: var(--muted);
+  display: inline-flex;
+  font-size: var(--text-2xs);
+  letter-spacing: 0.08em;
+  padding: 0.15rem var(--space-1);
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+.paper-action-link::before {
+  content: "↗";
+  margin-right: 0.35rem;
+}
+
+.publication-list .paper-action-link:hover,
+.publication-list .paper-action-link:focus-visible {
+  border-color: var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.paper-action-link:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 0.2rem;
 }

@@ -15,14 +15,14 @@ const pages = [
     paths: ["/"],
   },
   {
-    source: join("pages", "02-research.html"),
-    output: join("research", "index.html"),
-    paths: ["/research", "/research/"],
+    source: join("pages", "02-current-work.html"),
+    output: join("current-work", "index.html"),
+    paths: ["/current-work", "/current-work/"],
   },
   {
-    source: join("pages", "03-work-in-progress.html"),
-    output: join("work-in-progress", "index.html"),
-    paths: ["/work-in-progress", "/work-in-progress/"],
+    source: join("pages", "03-research.html"),
+    output: join("research", "index.html"),
+    paths: ["/research", "/research/"],
   },
   {
     source: join("pages", "04-resources.html"),
@@ -30,9 +30,16 @@ const pages = [
     paths: ["/resources", "/resources/"],
   },
 ];
+const redirects = [
+  {
+    destination: "/current-work/",
+    output: join("work-in-progress", "index.html"),
+    paths: ["/work-in-progress", "/work-in-progress/"],
+  },
+];
 
 const routes = Object.fromEntries(
-  pages.flatMap(({ output, paths }) => {
+  [...pages, ...redirects].flatMap(({ output, paths }) => {
     return paths.map((path) => [path, `/${output}`]);
   }),
 );
@@ -137,6 +144,24 @@ const renderPage = async (source) => {
   return html;
 };
 
+const renderRedirect = (destination) =>
+  [
+    "<!doctype html>",
+    '<html lang="en">',
+    "  <head>",
+    '    <meta charset="UTF-8" />',
+    '    <meta http-equiv="refresh" content="0; url=' + destination + '" />',
+    '    <link rel="canonical" href="https://nahamaharnab.github.io' +
+      destination +
+      '" />',
+    "    <title>Redirecting to current work</title>",
+    "  </head>",
+    "  <body>",
+    '    <p><a href="' + destination + '">Continue to current work</a></p>',
+    "  </body>",
+    "</html>",
+  ].join("\n");
+
 // Render every page before replacing the last successful build. This keeps
 // dist intact if an upload or page template contains an error.
 const renderedPages = await Promise.all(
@@ -145,6 +170,10 @@ const renderedPages = await Promise.all(
     output,
   })),
 );
+const renderedRedirects = redirects.map(({ destination, output }) => ({
+  html: renderRedirect(destination),
+  output,
+}));
 
 await rm(dist, { force: true, recursive: true });
 await Promise.all([
@@ -155,11 +184,16 @@ await Promise.all([
 ]);
 
 await Promise.all(
-  pages.map(({ output }) => mkdir(dirname(join(client, output)), { recursive: true })),
+  [...pages, ...redirects].map(({ output }) =>
+    mkdir(dirname(join(client, output)), { recursive: true }),
+  ),
 );
 
 await Promise.all([
   ...renderedPages.map(({ html, output }) =>
+    writeFile(join(client, output), html),
+  ),
+  ...renderedRedirects.map(({ html, output }) =>
     writeFile(join(client, output), html),
   ),
   ...(hasCv
