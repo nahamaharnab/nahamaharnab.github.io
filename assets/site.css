@@ -212,6 +212,7 @@ p {
   grid-row: 1;
   justify-content: center;
   min-width: 0;
+  transform: translateY(-0.5rem);
   view-transition-name: profile-identity;
 }
 
