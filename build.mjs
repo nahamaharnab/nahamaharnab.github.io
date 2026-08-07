@@ -5,44 +5,28 @@ import { fileURLToPath } from "node:url";
 const root = dirname(fileURLToPath(import.meta.url));
 const dist = join(root, "dist");
 const client = join(dist, "client");
-const server = join(dist, "server");
 const uploads = join(root, "_uploads");
 const publishedUploads = join(client, "uploads");
 const pages = [
   {
     source: join("pages", "01-about.html"),
     output: "index.html",
-    paths: ["/"],
   },
   {
     source: join("pages", "02-current-work.html"),
     output: join("current-work", "index.html"),
-    paths: ["/current-work", "/current-work/"],
   },
   {
     source: join("pages", "03-research.html"),
     output: join("research", "index.html"),
-    paths: ["/research", "/research/"],
-  },
-  {
-    source: join("pages", "04-resources.html"),
-    output: join("resources", "index.html"),
-    paths: ["/resources", "/resources/"],
   },
 ];
 const redirects = [
   {
     destination: "/current-work/",
     output: join("work-in-progress", "index.html"),
-    paths: ["/work-in-progress", "/work-in-progress/"],
   },
 ];
-
-const routes = Object.fromEntries(
-  [...pages, ...redirects].flatMap(({ output, paths }) => {
-    return paths.map((path) => [path, `/${output}`]);
-  }),
-);
 
 const uploadFiles = (await readdir(uploads, { withFileTypes: true }))
   .filter((entry) => entry.isFile())
@@ -178,9 +162,7 @@ const renderedRedirects = redirects.map(({ destination, output }) => ({
 await rm(dist, { force: true, recursive: true });
 await Promise.all([
   mkdir(client, { recursive: true }),
-  mkdir(server, { recursive: true }),
   mkdir(publishedUploads, { recursive: true }),
-  mkdir(join(dist, ".openai"), { recursive: true }),
 ]);
 
 await Promise.all(
@@ -200,27 +182,4 @@ await Promise.all([
     ? [cp(join(uploads, cvFilename), join(publishedUploads, cvFilename))]
     : []),
   cp(join(root, "assets"), join(client, "assets"), { recursive: true }),
-  cp(join(root, ".openai", "hosting.json"), join(dist, ".openai", "hosting.json")),
 ]);
-
-await writeFile(
-  join(server, "index.js"),
-  `const routes = ${JSON.stringify(routes, null, 2)};
-
-const worker = {
-  async fetch(request, env) {
-    const url = new URL(request.url);
-    const route = routes[url.pathname];
-    if (!route && !url.pathname.includes(".")) {
-      return new Response("Not found", { status: 404 });
-    }
-
-    const assetUrl = new URL(request.url);
-    assetUrl.pathname = route ?? url.pathname;
-    return env.ASSETS.fetch(new Request(assetUrl, request));
-  },
-};
-
-export default worker;
-`,
-);

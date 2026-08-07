@@ -278,23 +278,20 @@ p {
 
 ::view-transition-group(about-content),
 ::view-transition-group(current-work-content),
-::view-transition-group(research-content),
-::view-transition-group(resources-content) {
+::view-transition-group(research-content) {
   animation-duration: 385ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 ::view-transition-old(about-content),
 ::view-transition-old(current-work-content),
-::view-transition-old(research-content),
-::view-transition-old(resources-content) {
+::view-transition-old(research-content) {
   animation: 145ms cubic-bezier(0.4, 0, 1, 1) both page-fade-out;
 }
 
 ::view-transition-new(about-content),
 ::view-transition-new(current-work-content),
-::view-transition-new(research-content),
-::view-transition-new(resources-content) {
+::view-transition-new(research-content) {
   animation: 250ms 110ms cubic-bezier(0, 0, 0.2, 1) both page-fade-in;
 }
 
@@ -361,10 +358,6 @@ main::before {
 
 .page-current-work {
   --page-transition-name: current-work-content;
-}
-
-.page-resources {
-  --page-transition-name: resources-content;
 }
 
 .page-content {

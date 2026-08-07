@@ -10,7 +10,6 @@ Live site: [nahamaharnab.github.io](https://nahamaharnab.github.io)
 - `/` — about
 - `/current-work/` — current work
 - `/research/` — research
-- `/resources/` — resources
 
 ## Project structure
 
@@ -22,8 +21,7 @@ my-website/
 ├── pages/
 │   ├── 01-about.html
 │   ├── 02-current-work.html
-│   ├── 03-research.html
-│   └── 04-resources.html
+│   └── 03-research.html
 ├── assets/
 │   ├── favicon.png
 │   ├── profile.png
@@ -33,8 +31,6 @@ my-website/
 │   └── woven-background.jpg
 ├── _uploads/
 │   └── abstract-status-incentives.md
-├── .openai/
-│   └── hosting.json
 ├── .gitignore
 ├── build.mjs
 ├── package.json
@@ -92,10 +88,8 @@ Then open [http://localhost:4173](http://localhost:4173). Stop the preview with
 npm run build
 ```
 
-The build recreates `dist/` on every run:
-
-- `dist/client/` contains the deployable static website.
-- `dist/server/` contains the small worker used by the current Sites host.
+The build recreates `dist/client/`, which contains the deployable static
+website, on every run.
 
 The generated `dist/` folder is ignored by Git because it can always be rebuilt
 from the tracked source files.
@@ -116,11 +110,6 @@ rebuilds them automatically.
 ## Before each upload
 
 1. Run `npm run build` and resolve any reported error.
-2. Check that the About, Current Work, Research, and Resources pages open.
+2. Check that the About, Current Work, and Research pages open.
 3. Confirm that only intended files from `_uploads` are being tracked.
 4. Review the changes, then commit and push them.
-
-## Hosting
-
-GitHub Pages is the primary host. `.openai/hosting.json` keeps the previous
-Sites deployment available as a fallback and contains no website content.
