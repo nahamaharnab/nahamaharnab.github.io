@@ -58,9 +58,9 @@ the paper PDF is ready to publish.
 
 ### CV
 
-Add the CV as `_uploads/cv-maharnab-naha.pdf`. The next build activates the CV
+Add the CV as `_uploads/cv-maharnab.pdf`. The next build activates the CV
 link on the About page and publishes the file at
-`/uploads/cv-maharnab-naha.pdf`.
+`/uploads/cv-maharnab.pdf`.
 
 The `_uploads` folder is private by default. Only filenames explicitly allowed
 in `.gitignore` are tracked and used by the website. Review every allowed file

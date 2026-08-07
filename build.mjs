@@ -31,7 +31,7 @@ const redirects = [
 const uploadFiles = (await readdir(uploads, { withFileTypes: true }))
   .filter((entry) => entry.isFile())
   .map((entry) => entry.name);
-const cvFilename = "cv-maharnab-naha.pdf";
+const cvFilename = "cv-maharnab.pdf";
 const hasCv = uploadFiles.includes(cvFilename);
 
 const escapeHtml = (value) =>
