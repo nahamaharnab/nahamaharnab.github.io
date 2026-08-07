@@ -374,6 +374,11 @@ main::before {
   padding-top: calc(var(--space-5) + var(--space-1));
 }
 
+.page-about .page-content {
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
+}
+
 .intro p + p {
   margin-top: var(--space-5);
 }
