@@ -155,7 +155,6 @@ p {
   border: 1px solid var(--boundary);
   align-items: start;
   display: grid;
-  flex: 1;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto 1fr;
   margin-top: var(--sidebar-top);
