@@ -1,0 +1,5 @@
+# Competitive and Yardstick Learning: Evidence from a Tournament of Good Governance
+
+## Abstract
+
+Innovation is hard; the same goes when it comes to making or implementing policies for better governance. But governments need not innovate in isolation, they can observe others confronting similar problems and learn from their policies and practices that appear successful. Such information externalities provide a basis for policy diffusion. I study how competition among local governments shapes such policy diffusion using India’s Aspirational Districts Programme (ADP), where districts compete on a common set of development indicators and their relative performance is publicly ranked and top ranked districts are rewarded. These rankings potentially allowing other districts to observe, imitate, or benchmark against successful practices. I examine which dimensions of performance drive districts to the top of the ranking and whether other peer-districts subsequently follow along those dimensions. I further study whether such responses depend on the relevance of the high-performing peer, including geographic proximity and similarity in baseline conditions.

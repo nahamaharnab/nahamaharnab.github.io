@@ -7,6 +7,7 @@
 
 # Build-time website content. Track only files explicitly wired into the site.
 /_uploads/*
+!/_uploads/abstract-policy-diffusion.md
 !/_uploads/abstract-status-incentives.md
 !/_uploads/abstract-status-incentives.txt
 !/_uploads/cv-maharnab.pdf
