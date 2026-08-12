@@ -568,12 +568,16 @@ main::before {
 
 .abstract-text {
   color: var(--muted);
-  font-family: var(--font-label);
+  font-family: var(--font-body);
   font-size: var(--text-xs);
-  font-weight: 500;
+  font-weight: 400;
+  hyphens: auto;
   letter-spacing: 0.02em;
   line-height: 1.55;
   margin-top: var(--space-2);
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
 }
 
 .abstract-text + .abstract-text {
