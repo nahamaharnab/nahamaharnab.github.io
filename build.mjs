@@ -7,6 +7,7 @@ const dist = join(root, "dist");
 const client = join(dist, "client");
 const uploads = join(root, "_uploads");
 const publishedUploads = join(client, "uploads");
+const siteUrl = "https://nahamaharnab.github.io/";
 const pages = [
   {
     source: join("pages", "01-about.html"),
@@ -158,6 +159,17 @@ const renderedRedirects = redirects.map(({ destination, output }) => ({
   html: renderRedirect(destination),
   output,
 }));
+const sitemap = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ...pages.map(({ output }) => {
+    const url = new URL(output.replace(/index\.html$/, ""), siteUrl).href;
+    return `  <url><loc>${escapeHtml(url)}</loc></url>`;
+  }),
+  "</urlset>",
+  "",
+].join("\n");
+const robots = `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}sitemap.xml\n`;
 
 await rm(dist, { force: true, recursive: true });
 await Promise.all([
@@ -182,4 +194,6 @@ await Promise.all([
     ? [cp(join(uploads, cvFilename), join(publishedUploads, cvFilename))]
     : []),
   cp(join(root, "assets"), join(client, "assets"), { recursive: true }),
+  writeFile(join(client, "sitemap.xml"), sitemap),
+  writeFile(join(client, "robots.txt"), robots),
 ]);

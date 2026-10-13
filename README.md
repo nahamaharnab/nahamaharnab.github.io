@@ -107,6 +107,21 @@ as a validation check without deploying.
 The source stays on `main`; generated files remain outside Git because GitHub
 rebuilds them automatically.
 
+## Search discovery
+
+The build generates `/sitemap.xml` from the three public pages and `/robots.txt`
+with a link to that sitemap. Redirects and uploads are not listed in the sitemap.
+Keep each page's title, description, and canonical URL aligned with its content.
+
+Google Search Console uses the URL-prefix property
+`https://nahamaharnab.github.io/`. The homepage includes its HTML verification
+tag; keep that tag in place after verification so ownership remains verified.
+
+After deployment, submit `sitemap.xml` in Search Console's Sitemaps section.
+Use URL Inspection to check the homepage, `/current-work/`, and `/research/`,
+and request indexing when eligible. Check the reported reason for any page
+that remains unindexed. Submission does not guarantee indexing or ranking.
+
 ## Before each upload
 
 1. Run `npm run build` and resolve any reported error.
