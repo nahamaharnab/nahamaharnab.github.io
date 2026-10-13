@@ -159,16 +159,17 @@ const renderedRedirects = redirects.map(({ destination, output }) => ({
   html: renderRedirect(destination),
   output,
 }));
+const sitemapUrls = pages.map(({ output }) =>
+  new URL(output.replace(/index\.html$/, ""), siteUrl).href,
+);
 const sitemap = [
   '<?xml version="1.0" encoding="UTF-8"?>',
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-  ...pages.map(({ output }) => {
-    const url = new URL(output.replace(/index\.html$/, ""), siteUrl).href;
-    return `  <url><loc>${escapeHtml(url)}</loc></url>`;
-  }),
+  ...sitemapUrls.map((url) => `  <url><loc>${escapeHtml(url)}</loc></url>`),
   "</urlset>",
   "",
 ].join("\n");
+const textSitemap = `${sitemapUrls.join("\n")}\n`;
 const robots = `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}sitemap.xml\n`;
 
 await rm(dist, { force: true, recursive: true });
@@ -195,5 +196,6 @@ await Promise.all([
     : []),
   cp(join(root, "assets"), join(client, "assets"), { recursive: true }),
   writeFile(join(client, "sitemap.xml"), sitemap),
+  writeFile(join(client, "sitemap.txt"), textSitemap),
   writeFile(join(client, "robots.txt"), robots),
 ]);

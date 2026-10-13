@@ -112,6 +112,9 @@ rebuilds them automatically.
 The build generates `/sitemap.xml` from the three public pages and `/robots.txt`
 with a link to that sitemap. Redirects and uploads are not listed in the sitemap.
 Keep each page's title, description, and canonical URL aligned with its content.
+An equivalent `/sitemap.txt` is also generated from the same URL list. Google
+supports this one-URL-per-line format; it provides an alternative submission
+when investigating a fetch problem with the XML sitemap.
 
 Google Search Console uses the URL-prefix property
 `https://nahamaharnab.github.io/`. The homepage includes its HTML verification
