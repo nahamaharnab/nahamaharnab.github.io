@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { basename, dirname, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -106,8 +107,14 @@ const renderAbstract = async (slug) => {
   return renderParagraphs(body, "abstract-text");
 };
 
+const cvVersion = hasCv
+  ? createHash("sha256")
+      .update(await readFile(join(uploads, cvFilename)))
+      .digest("hex")
+      .slice(0, 12)
+  : null;
 const cvLink = hasCv
-  ? `<a href="/uploads/${cvFilename}" target="_blank" rel="noreferrer">CV</a>`
+  ? `<a href="/uploads/${cvFilename}?v=${cvVersion}" target="_blank" rel="noreferrer">CV</a>`
   : '<a href="#" data-placeholder-message="CV coming soon." title="CV coming soon">CV</a>';
 
 const renderPage = async (source) => {

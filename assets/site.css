@@ -644,7 +644,7 @@ main::before {
   font-size: var(--text-2xs);
   letter-spacing: 0.08em;
   margin-bottom: var(--space-5);
-  margin-top: var(--space-8);
+  margin-top: var(--space-4);
   text-transform: uppercase;
 }
 
@@ -741,7 +741,7 @@ main::before {
 
   .site-footer {
     margin-bottom: var(--space-5);
-    margin-top: var(--space-7);
+    margin-top: var(--space-3);
   }
 }
 

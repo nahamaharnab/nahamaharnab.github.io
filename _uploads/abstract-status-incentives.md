@@ -1,4 +1,4 @@
-# Returns to Career Status — Evidence from International Chess Players
+# Returns to Career Status — Evidence from Chess Players
 
 ## Abstract
 
