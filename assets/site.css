@@ -8,7 +8,7 @@
   --font-label: "Google Sans", Helvetica, "Helvetica Neue", Arial, sans-serif;
   --page-width: 52.125rem;
   --content-width: 35rem;
-  --profile-size: 13.75rem;
+  --profile-size: 12rem;
   --sidebar-top: clamp(4.25rem, 8vh, 7rem);
   --page-gutter: 3rem;
   --space-1: 0.5rem;
@@ -164,18 +164,19 @@ p {
 
 .site-sidebar {
   align-items: center;
-  column-gap: var(--space-5);
+  column-gap: var(--space-3);
   display: grid;
-  grid-template-columns:
-    minmax(0, 1fr) var(--profile-size) max-content minmax(0, 1fr);
+  grid-template-columns: var(--profile-size) minmax(0, max-content);
   grid-template-rows: auto auto;
-  padding: 0 0 var(--space-1);
+  justify-content: center;
+  padding: var(--space-3) 0 var(--space-2);
+  row-gap: var(--space-2);
 }
 
 .profile-link {
   border-radius: 50%;
   display: block;
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 1;
   height: var(--profile-size);
   overflow: hidden;
@@ -195,10 +196,10 @@ p {
 .wordmark {
   display: block;
   font-family: var(--font-label);
-  font-size: var(--text-4xl);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1.18;
+  font-size: 2.75rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -207,7 +208,7 @@ p {
   align-self: center;
   display: flex;
   flex-direction: column;
-  grid-column: 3;
+  grid-column: 2;
   grid-row: 1;
   justify-content: center;
   min-width: 0;
@@ -218,13 +219,13 @@ p {
   align-items: center;
   display: flex;
   gap: var(--space-1);
-  margin-top: 0.375rem;
+  margin-top: var(--space-2);
 }
 
 .pronunciation {
   color: var(--muted);
-  font-size: var(--text-sm);
-  letter-spacing: 0.04em;
+  font-size: var(--text-base);
+  letter-spacing: 0.015em;
 }
 
 .pronunciation-audio {
@@ -376,6 +377,12 @@ main::before {
 .page-about .page-content {
   padding-left: var(--space-3);
   padding-right: var(--space-3);
+}
+
+.intro p {
+  hyphens: none;
+  text-align: justify;
+  text-align-last: left;
 }
 
 .intro p + p {
@@ -571,7 +578,7 @@ main::before {
   font-family: var(--font-body);
   font-size: var(--text-xs);
   font-weight: 400;
-  hyphens: auto;
+  hyphens: none;
   letter-spacing: 0.02em;
   line-height: 1.55;
   margin-top: var(--space-2);
@@ -662,7 +669,7 @@ main::before {
 @media (max-width: 47.5rem) {
   :root {
     --page-gutter: clamp(0.75rem, 5vw, 2.5rem);
-    --profile-size: clamp(5rem, 24vw, 7rem);
+    --profile-size: clamp(8rem, 25vw, 10.25rem);
   }
 
   body {
@@ -676,8 +683,8 @@ main::before {
   }
 
   .site-sidebar {
-    gap: 0 clamp(0.5rem, 2.5vw, var(--space-3));
-    grid-template-columns: var(--profile-size) minmax(0, 1fr);
+    column-gap: clamp(0.5rem, 2vw, 1rem);
+    row-gap: var(--space-1);
   }
 
   .profile-link {
@@ -697,21 +704,25 @@ main::before {
   }
 
   .wordmark {
-    font-size: clamp(1.35rem, 6vw, 2rem);
+    font-size: clamp(2rem, 6vw, 2.5rem);
   }
 
   .pronunciation-line {
-    gap: clamp(0.25rem, 1.25vw, var(--space-1));
-    margin-top: clamp(0.25rem, 0.75vw, 0.375rem);
+    gap: var(--space-1);
+    margin-top: var(--space-2);
   }
 
   .pronunciation {
-    font-size: clamp(0.6875rem, 3vw, var(--text-sm));
+    font-size: var(--text-sm);
   }
 
   .site-nav {
     gap: var(--space-2) clamp(0.5rem, 3vw, var(--space-4));
     margin-top: clamp(0.375rem, 1.5vw, var(--space-2));
+  }
+
+  .page-about .site-nav {
+    margin-top: 0;
   }
 
   .site-nav a,
@@ -731,5 +742,36 @@ main::before {
   .site-footer {
     margin-bottom: var(--space-5);
     margin-top: var(--space-7);
+  }
+}
+
+@media (max-width: 33.75rem) {
+  .page-about {
+    --profile-size: 8rem;
+  }
+
+  .page-about .site-sidebar {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--space-1);
+  }
+
+  .profile-link {
+    justify-self: center;
+  }
+
+  .identity-block {
+    align-items: center;
+    grid-column: 1;
+    grid-row: 2;
+    text-align: center;
+  }
+
+  .wordmark {
+    font-size: clamp(1.75rem, 8vw, 2.375rem);
+  }
+
+  .page-about .site-nav {
+    grid-row: 3;
+    margin-top: var(--space-1);
   }
 }

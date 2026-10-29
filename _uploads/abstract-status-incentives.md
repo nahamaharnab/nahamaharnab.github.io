@@ -1,4 +1,4 @@
-# Status Incentives and Career Motivation: Evidence from International Chess Players
+# Returns to Career Status — Evidence from International Chess Players
 
 ## Abstract
 

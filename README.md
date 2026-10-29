@@ -30,7 +30,10 @@ my-website/
 │   ├── social-preview.png
 │   └── woven-background.jpg
 ├── _uploads/
-│   └── abstract-status-incentives.md
+│   ├── abstract-policy-diffusion.md
+│   ├── abstract-status-incentives.md
+│   ├── cv-maharnab.pdf
+│   └── impact-language-barrier-print-version.pdf
 ├── .gitignore
 ├── build.mjs
 ├── package.json
@@ -42,11 +45,15 @@ short and readable.
 
 ## Updating website content
 
-### Working-paper abstract
+### Current Work abstracts
 
 Edit `_uploads/abstract-status-incentives.md`. The build reads the text following
 the `## Abstract` heading and places it inside the expandable abstract on the
 Current Work page.
+
+Edit `_uploads/abstract-policy-diffusion.md` for the Work in Progress abstract.
+Both abstracts are visible by default and can be collapsed by visitors. Their
+text is justified with automatic hyphenation disabled.
 
 The build also accepts `_uploads/abstract-status-incentives.txt`. Keep only one of
 the Markdown or text versions; the build stops with a clear error if both are
@@ -62,9 +69,17 @@ Add the CV as `_uploads/cv-maharnab.pdf`. The next build activates the CV
 link on the About page and publishes the file at
 `/uploads/cv-maharnab.pdf`.
 
-The `_uploads` folder is private by default. Only filenames explicitly allowed
-in `.gitignore` are tracked and used by the website. Review every allowed file
-before pushing it to a public GitHub repository.
+### Publication print version
+
+The first publication on the Research page has a `[print version]` link to
+`_uploads/impact-language-barrier-print-version.pdf`. The build publishes this
+PDF at `/uploads/impact-language-barrier-print-version.pdf`. Replace that file
+to update the linked PDF.
+
+Files in `_uploads` are excluded from Git by default; `.gitignore` explicitly
+allows the two abstracts and the two PDFs above. The build inserts the abstract
+text into the pages and copies only those two PDFs into the public `uploads/`
+directory. Review newly allowed files before pushing to the public repository.
 
 ## Local preview
 
@@ -90,6 +105,12 @@ npm run build
 
 The build recreates `dist/client/`, which contains the deployable static
 website, on every run.
+
+For a manual upload, upload the **contents** of `dist/client/` to the web root.
+This includes the three pages, the legacy `/work-in-progress/` redirect, assets,
+both PDFs, `robots.txt`, and the two sitemaps. Do not upload the whole project
+folder or `_uploads/` directly. macOS `.DS_Store` files are excluded from the
+generated assets.
 
 The generated `dist/` folder is ignored by Git because it can always be rebuilt
 from the tracked source files.
@@ -130,4 +151,5 @@ that remains unindexed. Submission does not guarantee indexing or ranking.
 1. Run `npm run build` and resolve any reported error.
 2. Check that the About, Current Work, and Research pages open.
 3. Confirm that only intended files from `_uploads` are being tracked.
-4. Review the changes, then commit and push them.
+4. Include new files such as the publication PDF when committing source changes.
+5. Review the changes, then commit and push them.

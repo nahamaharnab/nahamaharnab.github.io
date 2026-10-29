@@ -1,5 +1,5 @@
 import { cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
-import { dirname, extname, join } from "node:path";
+import { basename, dirname, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = dirname(fileURLToPath(import.meta.url));
@@ -34,6 +34,7 @@ const uploadFiles = (await readdir(uploads, { withFileTypes: true }))
   .map((entry) => entry.name);
 const cvFilename = "cv-maharnab.pdf";
 const hasCv = uploadFiles.includes(cvFilename);
+const publicationPdfFilename = "impact-language-barrier-print-version.pdf";
 
 const escapeHtml = (value) =>
   value.replace(
@@ -194,7 +195,14 @@ await Promise.all([
   ...(hasCv
     ? [cp(join(uploads, cvFilename), join(publishedUploads, cvFilename))]
     : []),
-  cp(join(root, "assets"), join(client, "assets"), { recursive: true }),
+  cp(
+    join(uploads, publicationPdfFilename),
+    join(publishedUploads, publicationPdfFilename),
+  ),
+  cp(join(root, "assets"), join(client, "assets"), {
+    recursive: true,
+    filter: (source) => basename(source) !== ".DS_Store",
+  }),
   writeFile(join(client, "sitemap.xml"), sitemap),
   writeFile(join(client, "sitemap.txt"), textSitemap),
   writeFile(join(client, "robots.txt"), robots),

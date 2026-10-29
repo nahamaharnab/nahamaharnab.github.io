@@ -1,4 +1,4 @@
-# Competitive and Yardstick Learning: Evidence from a Tournament of Good Governance
+# Learning from Winners, Policy Diffusion under Competition
 
 ## Abstract
 
