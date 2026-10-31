@@ -226,6 +226,7 @@ p {
   color: var(--muted);
   font-size: var(--text-base);
   letter-spacing: 0.015em;
+  white-space: pre-wrap;
 }
 
 .pronunciation-audio {
@@ -386,7 +387,7 @@ main::before {
 }
 
 .page-about .intro p:first-child {
-  text-indent: 1.5em;
+  text-indent: 2em;
 }
 
 .intro p + p {

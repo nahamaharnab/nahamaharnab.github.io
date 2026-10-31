@@ -11,7 +11,13 @@ pronunciationButtons.forEach((button) => {
   button.addEventListener("click", () => {
     window.speechSynthesis.cancel();
 
-    const pronunciation = new SpeechSynthesisUtterance("ma her nub, nah hah");
+    const pronunciationText = button
+      .closest(".pronunciation-line")
+      .querySelector(".pronunciation")
+      .textContent.trim()
+      .replace(/\s+/g, ", ")
+      .toLowerCase();
+    const pronunciation = new SpeechSynthesisUtterance(pronunciationText);
     pronunciation.lang = "en-US";
     pronunciation.rate = 0.75;
 
