@@ -27,8 +27,8 @@
       href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/assets/site.css?v=20261031-2" />
-    <script src="/assets/site.js?v=20261031-1" defer></script>
+    <link rel="stylesheet" href="/assets/site.css?v=20261031-3" />
+    <script src="/assets/site.js?v=20261031-2" defer></script>
     <title>About | Maharnab Naha</title>
   </head>
   <body class="page-about">
@@ -47,14 +47,22 @@
           <a class="wordmark" href="/">Maharnab Naha</a>
           <div class="pronunciation-line">
             <p class="pronunciation">muh-HAR-nawb</p>
-            <button
-              class="pronunciation-audio"
-              type="button"
-              aria-label="Hear the pronunciation of Maharnab"
-              hidden
-            >
-              <span class="material-symbols-outlined" aria-hidden="true">volume_up</span>
-            </button>
+            <span class="pronunciation-control">
+              <button
+                class="pronunciation-audio"
+                type="button"
+                aria-label="Hear the pronunciation and learn the meaning of Maharnab"
+                aria-describedby="name-meaning"
+                hidden
+              >
+                <span class="material-symbols-outlined" aria-hidden="true">volume_up</span>
+              </button>
+              <span class="pronunciation-tooltip" id="name-meaning" role="tooltip" hidden>
+                <strong>Maha</strong> means “great” and <strong>arnab</strong>
+                means “ocean.” Together, <strong>Maharnab</strong> means
+                <strong>“the great ocean.”</strong>
+              </span>
+            </span>
           </div>
         </div>
         <nav class="site-nav" aria-label="Main navigation">
