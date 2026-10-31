@@ -385,6 +385,10 @@ main::before {
   text-align-last: left;
 }
 
+.page-about .intro p:first-child {
+  text-indent: 1.5em;
+}
+
 .intro p + p {
   margin-top: var(--space-5);
 }
